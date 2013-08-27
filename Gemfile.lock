@@ -1,6 +1,6 @@
 GIT
   remote: git@git.gditweb.com:gditweb_plugin
-  revision: d0adabb3a11d4f664bf7237718590e12c168655a
+  revision: 1c23cb2cc7650f9d13f81fb885212927b8652e29
   branch: feature/3.0.0
   specs:
     gditweb (3.0.0)
