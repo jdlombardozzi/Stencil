@@ -20,3 +20,5 @@ set :rvm_type, :user # this is the money config, it defaults to :system
 
 ssh_options[:forward_agent] = true
 default_run_options[:pty] = true # prevent sudo tty errors if using sudo
+
+set :branch, fetch(:branch, 'develop')
