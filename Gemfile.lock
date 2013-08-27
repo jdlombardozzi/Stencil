@@ -1,6 +1,6 @@
 GIT
   remote: git@git.gditweb.com:gditweb_plugin
-  revision: 944248ae85aed61ab1f7bc823221a91d9920d94d
+  revision: d0adabb3a11d4f664bf7237718590e12c168655a
   branch: feature/3.0.0
   specs:
     gditweb (3.0.0)
@@ -56,7 +56,7 @@ GEM
     daemons (1.1.9)
     erubis (2.7.0)
     eventmachine (1.0.3)
-    execjs (2.0.0)
+    execjs (2.0.1)
     highline (1.6.19)
     hike (1.2.3)
     i18n (0.6.5)

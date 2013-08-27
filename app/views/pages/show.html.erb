@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale.to_s[0, 2] %>"<%= raw ' dir="rtl"' if is_rtl? %>>
+  <head>
+    <title>Style Guide</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width"/>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag("application", media: "all", "data-turbolinks-track" => true) %>
+  </head>
+  <body>
+    <%= render("/pages/#{@id}") %>
+  </body>
+</html>
