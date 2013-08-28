@@ -1,7 +1,7 @@
 GIT
   remote: git@git.gditweb.com:gditweb_plugin
   revision: 1c23cb2cc7650f9d13f81fb885212927b8652e29
-  branch: feature/3.0.0
+  branch: release/3.0.0
   specs:
     gditweb (3.0.0)
       mysql2
@@ -140,7 +140,7 @@ GEM
     turbolinks (1.3.0)
       coffee-rails
     tzinfo (0.3.37)
-    uglifier (2.2.0)
+    uglifier (2.2.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
 
@@ -150,6 +150,7 @@ PLATFORMS
 DEPENDENCIES
   gditweb (= 3.0.0)!
   jquery-rails
+  protected_attributes
   pry-rails
   rails (= 4.0.0)
   rvm-capistrano

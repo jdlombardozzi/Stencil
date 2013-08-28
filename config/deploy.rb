@@ -22,3 +22,4 @@ ssh_options[:forward_agent] = true
 default_run_options[:pty] = true # prevent sudo tty errors if using sudo
 
 set :branch, fetch(:branch, 'develop')
+set :rails_env, 'development'
