@@ -18,6 +18,11 @@ gem 'sass-rails', '~> 4.0.0' # Use SCSS for stylesheets
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 gem 'jquery-rails' # Use jquery as the JavaScript library
 
+gem 'modernizr-rails'
+gem 'normalize-rails'
+
+gem 'haml'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   #gem 'sdoc', require: false

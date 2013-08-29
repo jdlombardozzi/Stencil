@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    $STYLE GUIDE CONTAINER STYLES
+$STYLE GUIDE CONTAINER STYLES
 \*------------------------------------*/
 /**
  * NOTE: These styles are specific to the style guide container and should not be modified.
@@ -10,7 +10,7 @@
 
 
 /*------------------------------------*\
-    $CONTENTS
+$CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -42,7 +42,7 @@
 
 
 /*------------------------------------*\
-    $STYLE GUIDE VARIABLES
+$STYLE GUIDE VARIABLES
 \*------------------------------------*/
 /*Fonts*/
 $sg-font : "HelveticaNeue", "Helvetica", "Arial", sans-serif;
@@ -86,7 +86,7 @@ $animate-quick: 0.2s;
 
 
 /*------------------------------------*\
-    $STYLE GUIDE MIXINS
+$STYLE GUIDE MIXINS
 \*------------------------------------*/
 @mixin sg-transition($transition-property, $transition-time, $method) {
 	-webkit-transition: $transition-property $transition-time $method;
@@ -102,10 +102,17 @@ $animate-quick: 0.2s;
 
 
 /*------------------------------------*\
-    $STYLE GUIDE INTERFACE
+$STYLE GUIDE INTERFACE
 \*------------------------------------*/
 
-html, body {
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html,
+body {
 	margin: 0;
 	padding: 0;
 	-webkit-text-size-adjust: 100%;
@@ -121,7 +128,7 @@ html, body {
 
 
 /*------------------------------------*\
-    $STYLE GUIDE HEADER
+$STYLE GUIDE HEADER
 \*------------------------------------*/
 /* Header */
 .sg-header {
@@ -139,13 +146,8 @@ html, body {
 	-moz-box-shadow: inset 0 1px 0 #5f6164,inset 0 -1px 0 #2e2f2f,0 1px 3px rgba(0,0,0,0.3);
 	box-shadow: inset 0 1px 0 #5f6164,inset 0 -1px 0 #2e2f2f,0 1px 3px rgba(0,0,0,0.3);
 
-	* {
-		-moz-box-sizing: border-box;
-	  -webkit-box-sizing: border-box;
-	  box-sizing: border-box;
-	}
-
-	ul, ol {
+	ul,
+	ol {
 		padding: 0;
 		margin: 0;
 	}
@@ -276,11 +278,11 @@ html, body {
 	}
 
 	.sg-nav-phases .sg-acc-panel {
-	  min-width: 0;
+		min-width: 0;
 
-	  &.active {
-	  max-height: none;
-	  }
+		&.active {
+			max-height: none;
+		}
 	}
 }
 
@@ -318,10 +320,10 @@ html, body {
 	.sg-input {
 		padding: 0.1em;
 		-webkit-transition: all $animate-quick ease-out;
-	    -moz-transition: all $animate-quick ease-out;
-	    -ms-transition: all $animate-quick ease-out;
-	    -o-transition: all $animate-quick ease-out;
-	    transition: all $animate-quick ease-out;
+		-moz-transition: all $animate-quick ease-out;
+		-ms-transition: all $animate-quick ease-out;
+		-o-transition: all $animate-quick ease-out;
+		transition: all $animate-quick ease-out;
 
 		&:active, &:focus {
 			outline: 0;
@@ -358,21 +360,21 @@ html, body {
 }
 
 .sg-current-size {
-		font-size: 70%;
-		color: $sg-secondary;
-		padding: 0.8em 0.95em;
+	font-size: 70%;
+	color: $sg-secondary;
+	padding: 0.8em 0.95em;
 
-		&:hover {
-			.sg-input {
-				background: $sg-quinary;
-				color: #000;
-			}
-		}
-
-		@media all and (min-width: $sg-bp-large) {
-			float: left;
+	&:hover {
+		.sg-input {
+			background: $sg-quinary;
+			color: #000;
 		}
 	}
+
+	@media all and (min-width: $sg-bp-large) {
+		float: left;
+	}
+}
 
 .sg-size-options {
 	max-width: 10em;
@@ -423,7 +425,7 @@ html, body {
 
 
 /*------------------------------------*\
-    $STYLE GUIDE VIEWPORT
+$STYLE GUIDE VIEWPORT
 \*------------------------------------*/
 
 /* Viewport */
@@ -432,36 +434,36 @@ html, body {
 	width: 100%;
 
 	@media all and (min-width: $sg-bp-med) {
-	  position: fixed;
-	  top: $offset-top;
-	  bottom: 0;
-	  left: 0;
-	  right: 0;
-	  z-index: 0;
+		position: fixed;
+		top: $offset-top;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 0;
 	}
 
 	&.wrap-animate {
 		-webkit-transition: left 0.3s ease-out;
-	    -moz-transition: left 0.3s ease-out;
-	    -ms-transition: left 0.3s ease-out;
-	    -o-transition: left 0.3s ease-out;
-	    transition: left 0.3s ease-out;
+		-moz-transition: left 0.3s ease-out;
+		-ms-transition: left 0.3s ease-out;
+		-o-transition: left 0.3s ease-out;
+		transition: left 0.3s ease-out;
 	}
 
 }
 
 #sg-viewport {
-  border: 0;
-  x-margin: 0 auto;
-  height: 100%;
-  width: 100%;
+	border: 0;
+	x-margin: 0 auto;
+	height: 100%;
+	width: 100%;
 
-  &.hay-mode {
+	&.hay-mode {
 		-webkit-transition: all 40s linear;
-	    -moz-transition: all 40s linear;
-	    -ms-transition: all 40s linear;
-	    -o-transition: all 40s linear;
-	    transition: all 40s linear;
+		-moz-transition: all 40s linear;
+		-ms-transition: all 40s linear;
+		-o-transition: all 40s linear;
+		transition: all 40s linear;
 	}
 }
 
@@ -481,10 +483,10 @@ html, body {
 
 	&.hay-mode {
 		-webkit-transition: all 40s linear;
-	    -moz-transition: all 40s linear;
-	    -ms-transition: all 40s linear;
-	    -o-transition: all 40s linear;
-	    transition: all 40s linear;
+		-moz-transition: all 40s linear;
+		-ms-transition: all 40s linear;
+		-o-transition: all 40s linear;
+		transition: all 40s linear;
 	}
 }
 
@@ -502,10 +504,10 @@ html, body {
 	height: 100%;
 	background: #999;
 	-webkit-transition: background $animate-quick ease-out;
-    -moz-transition: background $animate-quick ease-out;
-    -ms-transition: background $animate-quick ease-out;
-    -o-transition: background $animate-quick ease-out;
-    transition: background $animate-quick ease-out;
+	-moz-transition: background $animate-quick ease-out;
+	-ms-transition: background $animate-quick ease-out;
+	-o-transition: background $animate-quick ease-out;
+	transition: background $animate-quick ease-out;
 
 	&:hover {
 		background: #666;
@@ -518,11 +520,11 @@ html, body {
 }
 
 .vp-animate {
-  -webkit-transition: width 0.8s ease-out;
-  -moz-transition: width 0.8s ease-out;
-  -ms-transition: width 0.8s ease-out;
-  -o-transition: width 0.8s ease-out;
-  transition: width 0.8s ease-out;
+	-webkit-transition: width 0.8s ease-out;
+	-moz-transition: width 0.8s ease-out;
+	-ms-transition: width 0.8s ease-out;
+	-o-transition: width 0.8s ease-out;
+	transition: width 0.8s ease-out;
 }
 
 
@@ -530,7 +532,7 @@ html, body {
 
 
 /*------------------------------------*\
-    $STYLE GUIDE CONTENT
+$STYLE GUIDE CONTENT
 \*------------------------------------*/
 
 /* Section Head */

@@ -1,0 +1,89 @@
+!!!
+%html.no-js{ lang: "en" }
+  %head
+    %meta{ charset: "utf-8" }/
+    %meta{ 'http-equiv' => "X-UA-Compatible", content: "IE=edge" }/
+
+    %title Stencil Pattern Lab
+
+    %meta{ name: "description", content: "Boilerplate for layouts and styles" }/
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1" }/
+    = csrf_meta_tags
+
+    = stylesheet_link_tag( 'application', media: 'all', data: { 'turbolinks-track' => true } )
+    = javascript_include_tag( 'modernizr' )
+
+  %body.sg-nav-wrapper
+    /[if lte IE 7]
+      %p.browsehappy
+        You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+
+    %header.sg-header{ role: 'banner' }
+      = link_to( 'Menu', '#sg-nav-container', class: 'sg-nav-toggle' )
+      #sg-nav-container.sg-nav-container
+        %ol.sg-nav{ role: 'navigation' }
+          %li.sg-nav-Atoms
+            = link_to( 'Atoms', '#', class: 'sg-acc-handle' )
+          %li.sg-nav-Molecules
+            = link_to( 'Molecules', '#', class: 'sg-acc-handle' )
+          %li.sg-nav-Organisms
+            = link_to( 'Organisms', '#', class: 'sg-acc-handle' )
+          %li.sg-nav-Templates
+            = link_to( 'Templates', '#', class: 'sg-acc-handle' )
+            %ol.sg-acc-panel
+              %li
+                = link_to( 'Homepage', index_url(:url => 'templates/homepage'), class: 'sg-pop' )
+              %li
+                = link_to( 'Article', index_url(:url => 'templates/article'), class: 'sg-pop' )
+          %li.sg-nav-Pages
+            = link_to( 'Pages', '#', class: 'sg-acc-handle' )
+          %li
+            = link_to( 'All', index_url )
+
+      #sg-controls.sg-controls
+        .sg-control-content
+          %ul.sg-control
+            %li.sg-nav-phases
+              = link_to( 'Phases', '#', class: 'sg-acc-handle' )
+            %li.sg-view
+              = link_to( 'View', '#', class: ['sg-acc-handle', 'sg-control-trigger'], id: 'sg-t-toggle' )
+              %ul#sg-view.sg-view.sg-acc-panel
+                %li
+                  = link_to( 'Annotations', '#', id: 'sg-t-annotations' )
+                %li
+                  = link_to( 'Code', '#', id: 'sg-t-code' )
+                %li
+                  = link_to( 'Clean', '#', id: 'sg-t-clean' )
+                %li
+                  = link_to( 'Raw', '#', id: 'sg-t-raw' )
+            %li.sg-size
+              .sg-current-size
+                %form#sg-form
+                  %input.sg-input.sg-size-px{ type: 'text', value: 320 }
+                  px /
+                  %input.sg-input.sg-size-em{ type: 'text', value: 20 }
+                  em
+              %ul.sg-acc-panel.sg-size-options
+                %li.sg-quarter
+                  = link_to( 'S', '#', id: 'sg-size-s' )
+                %li.sg-quarter
+                  = link_to( 'M', '#', id: 'sg-size-m' )
+                %li.sg-quarter
+                  = link_to( 'L', '#', id: 'sg-size-l' )
+                %li.sg-quarter
+                  = link_to( 'XL', '#', id: 'sg-size-xl' )
+                %li.sg-half
+                  = link_to( 'Full', '#', id: 'sg-size-full' )
+                %li.sg-half
+                  = link_to( 'Random', '#', class: 'mode-link', id: 'sg-size-disco' )
+                %li.sg-half
+                  = link_to( 'Hay!', '#', class: 'mode-link', id: 'sg-size-hay' )
+
+    #sg-vp-wrap
+      #sg-cover
+      #sg-gen-container
+        = yield
+        #sg-rightpull-container
+          #sg-rightpull
+
+    = javascript_include_tag( 'application', data: { 'turbolinks-track' => true } )
