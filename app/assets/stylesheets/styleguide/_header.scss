@@ -42,6 +42,19 @@ $STYLE GUIDE HEADER
       background: $sg-tint;
     }
   }
+  & a.home {
+    background: {
+     image: image-url('home.png');
+     position: center;
+     repeat: no-repeat;
+     size: 10px;
+    }
+    text-indent: -9999px;
+
+    &:hover {
+      background-image: image-url('home-active.png');
+    }
+  }
 }
 
 

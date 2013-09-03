@@ -100,6 +100,8 @@
       = link_to( 'Menu', '#sg-nav-container', class: 'sg-nav-toggle' )
       #sg-nav-container.sg-nav-container
         %ol.sg-nav{ role: 'navigation' }
+          %li
+            = link_to('Home', index_url, class: 'home')
           - navigation.each do |key, subnav|
             %li{:class => "sg-nav-#{key.to_s}"}
               = link_to(key.to_s.titlecase, index_url(:url => key.to_s), class: 'sg-acc-handle')
