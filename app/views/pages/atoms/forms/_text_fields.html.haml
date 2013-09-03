@@ -1,0 +1,19 @@
+%fieldset
+  .field-container
+    %label{ for: 'text' } Text Input <abbr title="Required">*</abbr>
+    %input{ type: 'text', id: 'text', placeholder: 'Text input...' }
+  .field-container
+    %label{ for: 'password' } Password Input
+    %input{ type: 'password', id: 'password', placeholder: 'Strong password' }
+  .field-container
+    %label{ for: 'url' } URL Input
+    %input{ type: 'url', id: 'url', placeholder: 'http://example.com' }
+  .field-container
+    %label{ for: 'email' } Email Input
+    %input{ type: 'email', id: 'email', placeholder: 'name@example.com' }
+  .field-container
+    %label{ for: 'search' } Search Input
+    %input{ type: 'search', id: 'search', placeholder: 'Search terms...' }
+  .field-container
+    %label{ for: 'number' } Number Input
+    %input{ type: 'number', id: 'number', placeholder: 'Numbers only', pattern: '[0-9]*' }
