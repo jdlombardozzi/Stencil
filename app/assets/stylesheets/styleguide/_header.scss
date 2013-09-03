@@ -3,292 +3,292 @@ $STYLE GUIDE HEADER
 \*------------------------------------*/
 /* Header */
 .sg-header {
-	background: $sg-primary;
-	color: $sg-quaternary;
-	font-family: $sg-font;
-	text-transform: uppercase;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 2;
-	width: 100%;
+  background: $sg-primary;
+  color: $sg-quaternary;
+  font-family: $sg-font;
+  text-transform: uppercase;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
 
-	-webkit-box-shadow: inset 0 1px 0 #5f6164,inset 0 -1px 0 #2e2f2f,0 1px 3px rgba(0,0,0,0.3);
-	-moz-box-shadow: inset 0 1px 0 #5f6164,inset 0 -1px 0 #2e2f2f,0 1px 3px rgba(0,0,0,0.3);
-	box-shadow: inset 0 1px 0 #5f6164,inset 0 -1px 0 #2e2f2f,0 1px 3px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 1px 0 #5f6164,inset 0 -1px 0 #2e2f2f,0 1px 3px rgba(0,0,0,0.3);
+  -moz-box-shadow: inset 0 1px 0 #5f6164,inset 0 -1px 0 #2e2f2f,0 1px 3px rgba(0,0,0,0.3);
+  box-shadow: inset 0 1px 0 #5f6164,inset 0 -1px 0 #2e2f2f,0 1px 3px rgba(0,0,0,0.3);
 
-	ul,
-	ol {
-		padding: 0;
-		margin: 0;
-	}
+  ul,
+  ol {
+    padding: 0;
+    margin: 0;
+  }
 
-	li {
-		list-style: none;
-		border-bottom: 1px solid $sg-tint;
-	}
-	a {
-		font-size: $sg-font-size-sm;
-		color: $sg-secondary;
-		text-decoration: none;
-		display: block;
-		line-height: 1;
-		padding: $sg-pad;
-		@include sg-transition(background,0.15s,ease-out);
-		@include sg-transition(color,0.15s,ease-out);
+  li {
+    list-style: none;
+    border-bottom: 1px solid $sg-tint;
+  }
+  a {
+    font-size: $sg-font-size-sm;
+    color: $sg-secondary;
+    text-decoration: none;
+    display: block;
+    line-height: 1;
+    padding: $sg-pad;
+    @include sg-transition(background,0.15s,ease-out);
+    @include sg-transition(color,0.15s,ease-out);
 
-		&:hover, &:focus, &.active {
-			color: $sg-quaternary;
-			background: $sg-tint;
-		}
-	}
+    &:hover, &:focus, &.active {
+      color: $sg-quaternary;
+      background: $sg-tint;
+    }
+  }
 }
 
 
 
 /* Navigation */
 .sg-header .sg-nav-toggle {
-	padding: $sg-pad;
-	border-bottom: 1px solid rgba(0,0,0,0);
-	position: relative;
-	z-index: 2;
-	@media all and (min-width: $sg-bp-med) {
-		display: none;
-	}
+  padding: $sg-pad;
+  border-bottom: 1px solid rgba(0,0,0,0);
+  position: relative;
+  z-index: 2;
+  @media all and (min-width: $sg-bp-med) {
+    display: none;
+  }
 }
 
 .sg-nav-container {
-	@media all and (max-width: $sg-bp-med) {
-		overflow: hidden;
-		max-height: 0;
-		@include sg-transition(max-height,0.5s,ease-out);
+  @media all and (max-width: $sg-bp-med) {
+    overflow: hidden;
+    max-height: 0;
+    @include sg-transition(max-height,0.5s,ease-out);
 
-		&.active {
-			max-height: 50em;
-		}
-	}
+    &.active {
+      max-height: 50em;
+    }
+  }
 }
 
 .sg-nav {
-	z-index: 1;
-	margin: 0;
-	padding: 0;
-	list-style: none;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
-	> li {
+  > li {
 
-		@media all and (min-width: $sg-bp-med) {
-			border-bottom: 0;
-			border-right: 1px solid $sg-tint;
-			float: left;
-			position: relative;
+    @media all and (min-width: $sg-bp-med) {
+      border-bottom: 0;
+      border-right: 1px solid $sg-tint;
+      float: left;
+      position: relative;
 
-			> ol {
-				position: absolute;
-				top: $offset-top;
-				left: 0;
-			}
+      > ol {
+	position: absolute;
+	top: $offset-top;
+	left: 0;
+      }
 
-		}
-	}
+    }
+  }
 }
 
 .sg-nav-Pages {
-	ol {
-		width: 24em;
-	}
-	li {
-		float: left;
-		width: 50%;
-	}
+  ol {
+    width: 24em;
+  }
+  li {
+    float: left;
+    width: 50%;
+  }
 }
 
 /* Accordion */
 .sg-acc-handle {
-	&:after {
-		content: ' +';
-		float: right;
-		font-size: $sg-font-size-sm;
+  &:after {
+    content: ' +';
+    float: right;
+    font-size: $sg-font-size-sm;
 
-		@media all and (min-width: $sg-bp-med) {
-			float: none;
-		}
-	}
+    @media all and (min-width: $sg-bp-med) {
+      float: none;
+    }
+  }
 
-	&.active {
-		color: $sg-quaternary;
-		background: $sg-tint;
-		&:after {
-			content: ' -';
-		}
-	}
+  &.active {
+    color: $sg-quaternary;
+    background: $sg-tint;
+    &:after {
+      content: ' -';
+    }
+  }
 
 }
 
 .sg-acc-panel {
-	overflow: hidden;
-	max-height: 0;
-	min-width: 10em;
-	background: $sg-primary;
-	@include sg-transition(max-height,0.5s,ease-out);
-	&.active {
-		max-height: 50em;
-	}
+  overflow: hidden;
+  max-height: 0;
+  min-width: 10em;
+  background: $sg-primary;
+  @include sg-transition(max-height,0.5s,ease-out);
+  &.active {
+    max-height: 50em;
+  }
 }
 
 /* Controls (sizing, view mode) */
 .sg-controls {
-	border: 0;
-	position: absolute;
-	top: 0;
-	right: 0;
-	z-index: 2;
+  border: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
 
-	.sg-acc-panel.active {
-		max-height: 17em;
-	}
+  .sg-acc-panel.active {
+    max-height: 17em;
+  }
 
-	.sg-nav-phases .sg-acc-panel {
-		min-width: 0;
+  .sg-nav-phases .sg-acc-panel {
+    min-width: 0;
 
-		&.active {
-			max-height: none;
-		}
-	}
+    &.active {
+      max-height: none;
+    }
+  }
 }
 
 .sg-control-trigger {
-	border-bottom: 1px solid $sg-tint;
+  border-bottom: 1px solid $sg-tint;
 
-	@media all and (min-width: $sg-bp-med) {
-		border: 0;
-	}
+  @media all and (min-width: $sg-bp-med) {
+    border: 0;
+  }
 
-	@media all and (min-width: $sg-bp-large) {
-		float: left;
-		width: 6em;
-	}
+  @media all and (min-width: $sg-bp-large) {
+    float: left;
+    width: 6em;
+  }
 }
 
 .sg-control {
-	> li {
-		@media all and (min-width: $sg-bp-med) {
-			float: left;
-			border-bottom: 0;
-			border-left: 1px solid $sg-tint;
-		}
-	}
+  > li {
+    @media all and (min-width: $sg-bp-med) {
+      float: left;
+      border-bottom: 0;
+      border-left: 1px solid $sg-tint;
+    }
+  }
 }
 
 
 
 
 .sg-control {
-	> li {
-		float: left;
-	}
+  > li {
+    float: left;
+  }
 
-	.sg-input {
-		padding: 0.1em;
-		-webkit-transition: all $animate-quick ease-out;
-		-moz-transition: all $animate-quick ease-out;
-		-ms-transition: all $animate-quick ease-out;
-		-o-transition: all $animate-quick ease-out;
-		transition: all $animate-quick ease-out;
+  .sg-input {
+    padding: 0.1em;
+    -webkit-transition: all $animate-quick ease-out;
+    -moz-transition: all $animate-quick ease-out;
+    -ms-transition: all $animate-quick ease-out;
+    -o-transition: all $animate-quick ease-out;
+    transition: all $animate-quick ease-out;
 
-		&:active, &:focus {
-			outline: 0;
-			background: $sg-quinary;
-			color: #000;
-		}
-	}
+    &:active, &:focus {
+      outline: 0;
+      background: $sg-quinary;
+      color: #000;
+    }
+  }
 }
 
 .sg-quarter {
-	@media all and (max-width: $sg-bp-large) {
-		float: left;
-		width: 25%;
-		border-left: 1px solid $sg-tint;
-		text-align: center;
+  @media all and (max-width: $sg-bp-large) {
+    float: left;
+    width: 25%;
+    border-left: 1px solid $sg-tint;
+    text-align: center;
 
-		&:first-child {
-			border-left: 0;
-		}
-	}
+    &:first-child {
+      border-left: 0;
+    }
+  }
 }
 
 .sg-half {
-	@media all and (max-width: $sg-bp-large) {
-		float: left;
-		width: 50%;
-		border-left: 1px solid $sg-tint;
-		text-align: center;
+  @media all and (max-width: $sg-bp-large) {
+    float: left;
+    width: 50%;
+    border-left: 1px solid $sg-tint;
+    text-align: center;
 
-		&:nth-child(odd) {
-			border-left: 0;
-		}
-	}
+    &:nth-child(odd) {
+      border-left: 0;
+    }
+  }
 }
 
 .sg-current-size {
-	font-size: 70%;
-	color: $sg-secondary;
-	padding: 0.8em 0.95em;
+  font-size: 70%;
+  color: $sg-secondary;
+  padding: 0.8em 0.95em;
 
-	&:hover {
-		.sg-input {
-			background: $sg-quinary;
-			color: #000;
-		}
-	}
+  &:hover {
+    .sg-input {
+      background: $sg-quinary;
+      color: #000;
+    }
+  }
 
-	@media all and (min-width: $sg-bp-large) {
-		float: left;
-	}
+  @media all and (min-width: $sg-bp-large) {
+    float: left;
+  }
 }
 
 .sg-size-options {
-	max-width: 10em;
+  max-width: 10em;
 
-	@media all and (min-width: $sg-bp-large) {
-		position: static;
-		max-height: none;
-		max-width: none;
+  @media all and (min-width: $sg-bp-large) {
+    position: static;
+    max-height: none;
+    max-width: none;
 
-		li {
-			float: left;
-			border: 0;
-			border-left: 1px solid $sg-tint;
-		}
-	}
+    li {
+      float: left;
+      border: 0;
+      border-left: 1px solid $sg-tint;
+    }
+  }
 }
 
 #sg-form {
-	margin: 0;
-	border: 0;
-	padding: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
 }
 .sg-input {
-	margin: -2px 0 0 0;
-	padding: 0;
-	border: 1px solid #222;
-	background-color: #222;
-	color: gray;
-	width: 35px;
-	text-align: right;
+  margin: -2px 0 0 0;
+  padding: 0;
+  border: 1px solid #222;
+  background-color: #222;
+  color: gray;
+  width: 35px;
+  text-align: right;
 }
 
 .sg-input-active {
-	background-color: #fff;
-	color: #000;
+  background-color: #fff;
+  color: #000;
 }
 
 .sg-view {
-	position: relative;
+  position: relative;
 
-	> ul {
-		position: absolute;
-		top: $offset-top;
-		left: 0;
-	}
+  > ul {
+    position: absolute;
+    top: $offset-top;
+    left: 0;
+  }
 }

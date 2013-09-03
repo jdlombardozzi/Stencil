@@ -1,5 +1,29 @@
-= render( 'pages/atoms/text/headings' )
-= render( 'pages/atoms/text/headings_links' )
-= render( 'pages/atoms/text/headings_small' )
-= render( 'pages/atoms/text/subheadings' )
-= render( 'pages/atoms/text/paragraph' )
+.sg-pattern
+  %p.sg-head.sg-sub
+    = link_to( 'Headings', index_url(url: 'atoms/text/headings') )
+  = render( 'pages/atoms/text/headings' )
+
+.sg-pattern
+  %p.sg-head.sg-sub
+    = link_to( 'Headings w/links', index_url(url: 'atoms/text/headings_links') )
+  = render( 'pages/atoms/text/headings_links' )
+
+.sg-pattern
+  %p.sg-head.sg-sub
+    = link_to( 'Headings w/small text', index_url(url: 'atoms/text/headings_small') )
+  = render( 'pages/atoms/text/headings_small' )
+
+.sg-pattern
+  %p.sg-head.sg-sub
+    = link_to( 'Subheadings', index_url(url: 'atoms/text/subheadings') )
+  = render( 'pages/atoms/text/subheadings' )
+
+.sg-pattern
+  %p.sg-head.sg-sub
+    = link_to( 'Paragraph', index_url(url: 'atoms/text/paragraph') )
+  = render( 'pages/atoms/text/paragraph' )
+
+.sg-pattern
+  %p.sg-head.sg-sub
+    = link_to( 'Blockquote', index_url(url: 'atoms/text/blockquote') )
+  = render( 'pages/atoms/text/blockquote' )
