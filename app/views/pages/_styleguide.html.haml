@@ -1,3 +1,13 @@
-= render('pages/atoms/index')
-= render('pages/molecules/index')
-= render('pages/organisms/index')
+%div.sg-main{role: 'main'}
+  -# Patterns
+  %div#patterns
+    %div.sg-pattern
+      %h2.sg-head.sg-sub
+        = link_to('Atoms', index_url(url: 'atoms/index'))
+      = render('pages/atoms/index')
+      %h2.sg-head.sg-sub
+        = link_to('Molecules', index_url(url: 'molecules/index'))
+      = render('pages/molecules/index')
+      %h2.sg-head.sg-sub
+        = link_to('Organisms', index_url(url: 'organism/index'))
+      = render('pages/organisms/index')
