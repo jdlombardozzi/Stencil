@@ -24,21 +24,22 @@
         %ol.sg-nav{ role: 'navigation' }
           %li.sg-nav-Atoms
             = link_to( 'Atoms', '#', class: 'sg-acc-handle' )
-          %li.sg-nav-Molecules
-            = link_to( 'Molecules', '#', class: 'sg-acc-handle' )
-          %li.sg-nav-Organisms
-            = link_to( 'Organisms', '#', class: 'sg-acc-handle' )
-          %li.sg-nav-Templates
-            = link_to( 'Templates', '#', class: 'sg-acc-handle' )
-            %ol.sg-acc-panel
-              %li
-                = link_to( 'Homepage', index_url(:url => 'templates/homepage'), class: 'sg-pop' )
-              %li
-                = link_to( 'Article', index_url(:url => 'templates/article'), class: 'sg-pop' )
-          %li.sg-nav-Pages
-            = link_to( 'Pages', '#', class: 'sg-acc-handle' )
-          %li
-            = link_to( 'All', index_url )
+
+          -# %li.sg-nav-Molecules
+          -#   = link_to( 'Molecules', '#', class: 'sg-acc-handle' )
+          -# %li.sg-nav-Organisms
+          -#   = link_to( 'Organisms', '#', class: 'sg-acc-handle' )
+          -# %li.sg-nav-Templates
+          -#   = link_to( 'Templates', '#', class: 'sg-acc-handle' )
+          -#   %ol.sg-acc-panel
+          -#     %li
+          -#       = link_to( 'Homepage', index_url(:url => 'templates/homepage'), class: 'sg-pop' )
+          -#     %li
+          -#       = link_to( 'Article', index_url(:url => 'templates/article'), class: 'sg-pop' )
+          -# %li.sg-nav-Pages
+          -#   = link_to( 'Pages', '#', class: 'sg-acc-handle' )
+          -# %li
+          -#   = link_to( 'All', index_url )
 
       #sg-controls.sg-controls
         .sg-control-content

@@ -1,0 +1,21 @@
+/*------------------------------------*\
+$STYLE GUIDE INTERFACE
+\*------------------------------------*/
+
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	-webkit-text-size-adjust: 100%;
+}
+
+.sg-nav-wrapper {
+	overflow: hidden;
+	background: $sg-tertiary;
+}
