@@ -14,4 +14,4 @@
     = javascript_include_tag( 'modernizr' )
 
   %body
-    = render( "/pages/#{@id}" )
+    = render("/pages/#{@id}") rescue "#{@id} is not implemented."
