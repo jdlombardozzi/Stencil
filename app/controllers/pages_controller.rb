@@ -1,8 +1,9 @@
 class PagesController < ApplicationController
-  def index
-    @articles = Gditweb::Article.all
-  end
+  # Essentially just a shell of an iframe
+  def index; end
 
+  # Dynamically checks for a method related to the page id and then renders the page
+  # Will mostly be show through the index iframe
   def show
     send("page__#{params[:id]}") if respond_to?("page__#{params[:id]}")
 
@@ -11,6 +12,5 @@ class PagesController < ApplicationController
     render :layout => false
   end
 
-  def page__styleguide
-  end
+  def page__pages; end
 end

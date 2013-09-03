@@ -34,10 +34,47 @@
                         tables:[:table],
                         media:[:video,
                                :audio]},
-                molecules: {text:[:byline_author_only]},
-                organisms: {},
-                templates: {},
-                pages: {}}
+                molecules: {text:[:byline_author_only,
+                                  :byline_author_time,
+                                  :address,
+                                  :heading_group,
+                                  :blockquote_with_citation,
+                                  :intro_text,
+                                  :pullquote],
+                            layout:[:one_up,
+                                    :two_up,
+                                    :three_up,
+                                    :four_up],
+                            blocks:[:media_block,
+                                    :headline_byline,
+                                    :block_hero,
+                                    :block_thumb_headline,
+                                    :headline_only,
+                                    :inset_block],
+                            media:[:figure_with_caption],
+                            forms:[:search,
+                                   :comment_form,
+                                   :newsletter],
+                            navigation:[:primary_nav,
+                                        :footer_nav,
+                                        :breadcrumbs,
+                                        :pagination,
+                                        :tabs],
+                            components:[:social_share,
+                                        :accordion,
+                                        :single_comment]},
+                organisms: {global:[:header,
+                                    :footer],
+                            article:[:article_body],
+                            comments:[:comment_thread],
+                            components:[:carousel],
+                            sections:[:latest_posts,
+                                      :recent_tweets,
+                                      :related_posts]},
+                taxa: {homepage:[],
+                       article:[]},
+                pages: {homepage:[],
+                        article:[]}}
 
 !!!
 %html.no-js{ lang: "en" }
@@ -68,32 +105,24 @@
               = link_to(key.to_s.titlecase, index_url(:url => key.to_s), class: 'sg-acc-handle')
               %ol.sg-acc-panel
                 - subnav.each do |subnav_key, subnav_subnav|
-                  %li{:class => "sg-nav-#{subnav_key.to_s}"}
-                    = link_to(subnav_key.to_s.titlecase, index_url(:url => "#{key.to_s}/#{subnav_key}"), class: 'sg-acc-handle')
-                    %ol.sg-acc-panel
-                      - subnav_subnav.each do |subnav_subnav_key|
+                  - unless subnav_subnav.empty?
+                    %li{:class => "sg-nav-#{subnav_key.to_s}"}
+                      = link_to(subnav_key.to_s.titlecase, index_url(:url => "#{key.to_s}/#{subnav_key}"), class: 'sg-acc-handle')
+                      %ol.sg-acc-panel
+                        - subnav_subnav.each do |subnav_subnav_key|
+                          %li
+                            = link_to(subnav_subnav_key.to_s.titlecase, index_url(:url => "#{key.to_s}/#{subnav_key}/#{subnav_subnav_key}"), class: 'sg-pop')
                         %li
-                          = link_to(subnav_subnav_key.to_s.titlecase, index_url(:url => "#{key.to_s}/#{subnav_key}/#{subnav_subnav_key}"), class: 'sg-pop')
-                      %li
-                        = link_to('View All', index_url(:url => "#{key.to_s}/#{subnav_key}/index"), class: 'sg-pop')
-                %li
-                  = link_to('View All', index_url(:url => "#{key.to_s}/index"), class: 'sg-pop')
+                          = link_to('View All', index_url(:url => "#{key.to_s}/#{subnav_key}/index"), class: 'sg-pop')
+                  - else
+                    %li
+                      = link_to(subnav_key.to_s.titlecase, index_url(:url => "#{key.to_s}/#{subnav_key}"), class: 'sg-pop')
+                - unless [:taxa, :pages].include?(key)
+                  %li
+                    = link_to('View All', index_url(:url => "#{key.to_s}/index"), class: 'sg-pop')
       #sg-controls.sg-controls
         .sg-control-content
           %ul.sg-control
-            %li.sg-nav-phases
-              = link_to( 'Phases', '#', class: 'sg-acc-handle' )
-            %li.sg-view
-              = link_to( 'View', '#', class: ['sg-acc-handle', 'sg-control-trigger'], id: 'sg-t-toggle' )
-              %ul#sg-view.sg-view.sg-acc-panel
-                %li
-                  = link_to( 'Annotations', '#', id: 'sg-t-annotations' )
-                %li
-                  = link_to( 'Code', '#', id: 'sg-t-code' )
-                %li
-                  = link_to( 'Clean', '#', id: 'sg-t-clean' )
-                %li
-                  = link_to( 'Raw', '#', id: 'sg-t-raw' )
             %li.sg-size
               .sg-current-size
                 %form#sg-form
