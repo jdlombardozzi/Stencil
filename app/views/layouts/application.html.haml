@@ -1,5 +1,43 @@
 :ruby
-  navigation = { atoms: { global: [ :colors ] } }
+  navigation = {atoms: {global:[:colors,
+                                :fonts,
+                                :animations,
+                                :visibility],
+                        text:[:headings,
+                              :subheadings,
+                              :headings_with_links,
+                              :paragraph,
+                              :blockquote,
+                              :inline_elements,
+                              :time,
+                              :preformatted_text,
+                              :emphasis_colors,
+                              :hr,
+                              :caption],
+                        lists:[:unordered,
+                               :ordered,
+                               :definition],
+                        images:[:logo,
+                                :landscape_4x3,
+                                :landscape_16x9,
+                                :square,
+                                :avatar,
+                                :icons,
+                                :loading_icon,
+                                :favicon],
+                        forms:[:text_fields,
+                               :select_menu,
+                               :checkbox,
+                               :radio_buttons,
+                               :html5_inputs],
+                        buttons:[:buttons],
+                        tables:[:table],
+                        media:[:video,
+                               :audio]},
+                molecules: {text:[:byline_author_only]},
+                organisms: {},
+                templates: {},
+                pages: {}}
 
 !!!
 %html.no-js{ lang: "en" }
@@ -25,25 +63,21 @@
       = link_to( 'Menu', '#sg-nav-container', class: 'sg-nav-toggle' )
       #sg-nav-container.sg-nav-container
         %ol.sg-nav{ role: 'navigation' }
-          %li.sg-nav-Atoms
-            = link_to( 'Atoms', '#', class: 'sg-acc-handle' )
-
-          -# %li.sg-nav-Molecules
-          -#   = link_to( 'Molecules', '#', class: 'sg-acc-handle' )
-          -# %li.sg-nav-Organisms
-          -#   = link_to( 'Organisms', '#', class: 'sg-acc-handle' )
-          -# %li.sg-nav-Templates
-          -#   = link_to( 'Templates', '#', class: 'sg-acc-handle' )
-          -#   %ol.sg-acc-panel
-          -#     %li
-          -#       = link_to( 'Homepage', index_url(:url => 'templates/homepage'), class: 'sg-pop' )
-          -#     %li
-          -#       = link_to( 'Article', index_url(:url => 'templates/article'), class: 'sg-pop' )
-          -# %li.sg-nav-Pages
-          -#   = link_to( 'Pages', '#', class: 'sg-acc-handle' )
-          -# %li
-          -#   = link_to( 'All', index_url )
-
+          - navigation.each do |key, subnav|
+            %li{:class => "sg-nav-#{key.to_s}"}
+              = link_to(key.to_s.titlecase, index_url(:url => key.to_s), class: 'sg-acc-handle')
+              %ol.sg-acc-panel
+                - subnav.each do |subnav_key, subnav_subnav|
+                  %li{:class => "sg-nav-#{subnav_key.to_s}"}
+                    = link_to(subnav_key.to_s.titlecase, index_url(:url => "#{key.to_s}/#{subnav_key}"), class: 'sg-acc-handle')
+                    %ol.sg-acc-panel
+                      - subnav_subnav.each do |subnav_subnav_key|
+                        %li
+                          = link_to(subnav_subnav_key.to_s.titlecase, index_url(:url => "#{key.to_s}/#{subnav_key}/#{subnav_subnav_key}"), class: 'sg-pop')
+                      %li
+                        = link_to('View All', index_url(:url => "#{key.to_s}/#{subnav_key}/index"), class: 'sg-pop')
+                %li
+                  = link_to('View All', index_url(:url => "#{key.to_s}/index"), class: 'sg-pop')
       #sg-controls.sg-controls
         .sg-control-content
           %ul.sg-control
