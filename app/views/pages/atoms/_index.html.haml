@@ -1,1 +1,7 @@
-= render('pages/atoms/text/index')
+%h3.sg-head
+  = link_to( 'Global', index_url(url: 'atoms/global/index') )
+= render( 'pages/atoms/global/index' )
+
+%h3.sg-head
+  = link_to( 'Text', index_url(url: 'atoms/text/index') )
+= render( 'pages/atoms/text/index' )

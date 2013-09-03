@@ -1,1 +1,8 @@
-atoms/global/index
+.sg-pattern
+  %h4.sg-head.sg-sub
+    = link_to( 'Colors', index_url(url: 'atoms/global/colors') )
+  = render( 'pages/atoms/global/colors' )
+
+  %h4.sg-head.sg-sub
+    = link_to( 'Fonts', index_url(url: 'atoms/global/fonts') )
+  = render( 'pages/atoms/global/fonts' )

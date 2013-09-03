@@ -1,2 +1,26 @@
-%p
-  atoms/global/colors
+:ruby
+  colors = {
+    gray: '#808080',
+    gray_light: '#f9f9f9',
+    gray_light_2: '#eee',
+    gray_light_3: '#ddd',
+    gray_light_4: '#bbb',
+    gray_med: '#666',
+    gray_dark: '#333',
+    gray_dark_2: '#131313',
+    white: '#fff',
+    black: '#000',
+    dim: 'rgba(0,0,0,0.5)',
+    dimmer: 'rgba(0,0,0,0.8)',
+    error: '#f00',
+    valid: '#089e00',
+    brand_facebook: '#03539e',
+    brand_twitter: '#35ccff',
+    brand_linkedin: '#217bc1'
+  }
+
+%ul.sg-colors
+  - colors.each do |color, hex|
+    %li
+      %span.sg-swatch{ style: "background: #{hex}"}
+      %span.sg-label #{color}

@@ -1,5 +1,10 @@
-@import "styles/generic/main";
+@import "styleguide/variables";
+@import "styleguide/content";
 @import "styles/generic/variables";
+@import "styles/generic/mixins";
 
-@import "styles/base/boilerplate";
-@import "styles/base/headings";
+@import "styles/base/main";
+@import "styles/base/global-classes";
+@import "styles/base/text";
+
+@import "styles/objects/text";

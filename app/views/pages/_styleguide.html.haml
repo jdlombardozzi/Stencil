@@ -1,13 +1,13 @@
-%div.sg-main{role: 'main'}
+%div.sg-main{ role: 'main' }
   -# Patterns
   %div#patterns
     %div.sg-pattern
-      %h2.sg-head.sg-sub
+      %h2.sg-head
         = link_to('Atoms', index_url(url: 'atoms/index'))
       = render('pages/atoms/index')
-      %h2.sg-head.sg-sub
+      %h2.sg-head
         = link_to('Molecules', index_url(url: 'molecules/index'))
       = render('pages/molecules/index')
-      %h2.sg-head.sg-sub
+      %h2.sg-head
         = link_to('Organisms', index_url(url: 'organism/index'))
       = render('pages/organisms/index')
