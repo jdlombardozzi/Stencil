@@ -1,0 +1,11 @@
+%form.comment-form
+  %fieldset
+    .field-container
+      %label{ for: 'comment-name' } Name
+      %input#comment-name{ type: 'text', placeholder: 'Enter your name' }
+    .field-container
+      %label{ for: 'comment-email' } Email
+      %input#comment-email{ type: 'email', placeholder: 'Your email address' }
+    .field-container
+      %label{ for: 'comment-field' } Comment
+      %textarea.comment-field#comment-field{ rows: 5, placeholder: 'Write your comment here' }
