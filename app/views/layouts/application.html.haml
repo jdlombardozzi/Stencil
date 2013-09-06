@@ -13,11 +13,11 @@
     molecules: {
       text:[:byline_author, :byline_author_time, :address, :heading_group, :blockquote_with_citation, :intro_text, :pullquote],
       layout:[:one_up, :two_up, :three_up, :four_up],
-      blocks:[:media_block, :headline_byline, :block_hero, :block_thumb_headline, :headline_only, :inset_block],
+      blocks:[:media_block, :headline_byline, :hero, :thumb_headline, :headline_only, :inset_block],
       media: [:figure_with_caption],
       forms: [:search, :comment, :newsletter],
       navigation: [:primary_nav, :footer_nav, :breadcrumbs, :pagination, :tabs],
-      components: [:social_share, :accordion, :single_comment]
+      components: [:sharingbar, :accordion, :single_comment]
     },
     organisms: {
       global: [:header, :footer],
@@ -60,8 +60,7 @@
       = link_to( 'Menu', '#sg-nav-container', class: 'sg-nav-toggle' )
       #sg-nav-container.sg-nav-container
         %ol.sg-nav{ role: 'navigation' }
-          %li
-            = link_to('Home', index_url, class: 'home')
+          %li= link_to('Home', index_url, class: 'home')
           - navigation.each do |key, subnav|
             %li{:class => "sg-nav-#{key.to_s}"}
               = link_to(key.to_s.titlecase, index_url(:url => key.to_s), class: 'sg-acc-handle')
@@ -72,16 +71,12 @@
                       = link_to(subnav_key.to_s.titlecase, index_url(:url => "#{key.to_s}/#{subnav_key}"), class: 'sg-acc-handle')
                       %ol.sg-acc-panel
                         - subnav_subnav.each do |subnav_subnav_key|
-                          %li
-                            = link_to(subnav_subnav_key.to_s.titlecase, index_url(:url => "#{key.to_s}/#{subnav_key}/#{subnav_subnav_key}"), class: 'sg-pop')
-                        %li
-                          = link_to('View All', index_url(:url => "#{key.to_s}/#{subnav_key}/index"), class: 'sg-pop')
+                          %li= link_to(subnav_subnav_key.to_s.titlecase, index_url(:url => "#{key.to_s}/#{subnav_key}/#{subnav_subnav_key}"), class: 'sg-pop')
+                        %li= link_to('View All', index_url(:url => "#{key.to_s}/#{subnav_key}/index"), class: 'sg-pop')
                   - else
-                    %li
-                      = link_to(subnav_key.to_s.titlecase, index_url(:url => "#{key.to_s}/#{subnav_key}"), class: 'sg-pop')
+                    %li= link_to(subnav_key.to_s.titlecase, index_url(:url => "#{key.to_s}/#{subnav_key}"), class: 'sg-pop')
                 - unless [:taxa, :pages].include?(key)
-                  %li
-                    = link_to('View All', index_url(:url => "#{key.to_s}/index"), class: 'sg-pop')
+                  %li= link_to('View All', index_url(:url => "#{key.to_s}/index"), class: 'sg-pop')
       #sg-controls.sg-controls
         .sg-control-content
           %ul.sg-control
@@ -93,20 +88,13 @@
                   %input.sg-input.sg-size-em{ type: 'text', value: 20 }
                   em
               %ul.sg-acc-panel.sg-size-options
-                %li.sg-quarter
-                  = link_to( 'S', '#', id: 'sg-size-s' )
-                %li.sg-quarter
-                  = link_to( 'M', '#', id: 'sg-size-m' )
-                %li.sg-quarter
-                  = link_to( 'L', '#', id: 'sg-size-l' )
-                %li.sg-quarter
-                  = link_to( 'XL', '#', id: 'sg-size-xl' )
-                %li.sg-half
-                  = link_to( 'Full', '#', id: 'sg-size-full' )
-                %li.sg-half
-                  = link_to( 'Random', '#', class: 'mode-link', id: 'sg-size-disco' )
-                %li.sg-half
-                  = link_to( 'Hay!', '#', class: 'mode-link', id: 'sg-size-hay' )
+                %li.sg-quarter= link_to( 'S', '#', id: 'sg-size-s' )
+                %li.sg-quarter= link_to( 'M', '#', id: 'sg-size-m' )
+                %li.sg-quarter= link_to( 'L', '#', id: 'sg-size-l' )
+                %li.sg-quarter= link_to( 'XL', '#', id: 'sg-size-xl' )
+                %li.sg-half= link_to( 'Full', '#', id: 'sg-size-full' )
+                %li.sg-half= link_to( 'Random', '#', class: 'mode-link', id: 'sg-size-disco' )
+                %li.sg-half= link_to( 'Hay!', '#', class: 'mode-link', id: 'sg-size-hay' )
 
     #sg-vp-wrap
       #sg-cover

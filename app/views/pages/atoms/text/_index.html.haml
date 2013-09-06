@@ -1,29 +1,27 @@
 .sg-pattern
-  %h4.sg-head.sg-sub
-    = link_to( 'Headings', index_url(url: 'atoms/text/headings') )
+  %h4.sg-head.sg-sub= link_to( 'Headings', index_url(url: 'atoms/text/headings') )
   = render( 'pages/atoms/text/headings' )
 
 .sg-pattern
-  %h4.sg-head.sg-sub
-    = link_to( 'Headings w/links', index_url(url: 'atoms/text/headings_links') )
+  %h4.sg-head.sg-sub= link_to( 'Headings w/links', index_url(url: 'atoms/text/headings_links') )
   = render( 'pages/atoms/text/headings_links' )
 
 .sg-pattern
-  %h4.sg-head.sg-sub
-    = link_to( 'Headings w/small text', index_url(url: 'atoms/text/headings_small') )
+  %h4.sg-head.sg-sub= link_to( 'Headings w/small text', index_url(url: 'atoms/text/headings_small') )
   = render( 'pages/atoms/text/headings_small' )
 
 .sg-pattern
-  %h4.sg-head.sg-sub
-    = link_to( 'Subheadings', index_url(url: 'atoms/text/subheadings') )
+  %h4.sg-head.sg-sub= link_to( 'Subheadings', index_url(url: 'atoms/text/subheadings') )
   = render( 'pages/atoms/text/subheadings' )
 
 .sg-pattern
-  %h4.sg-head.sg-sub
-    = link_to( 'Paragraph', index_url(url: 'atoms/text/paragraph') )
+  %h4.sg-head.sg-sub= link_to( 'Paragraph', index_url(url: 'atoms/text/paragraph') )
   = render( 'pages/atoms/text/paragraph' )
 
 .sg-pattern
-  %h4.sg-head.sg-sub
-    = link_to( 'Blockquote', index_url(url: 'atoms/text/blockquote') )
+  %h4.sg-head.sg-sub= link_to( 'Blockquote', index_url(url: 'atoms/text/blockquote') )
   = render( 'pages/atoms/text/blockquote' )
+
+.sg-pattern
+  %h4.sg-head.sg-sub= link_to('Inline elements', index_url(url: 'atoms/text/inline_elements'))
+  = render('pages/atoms/text/inline_elements')
