@@ -1,1 +1,5 @@
-Article Template: pages/templates/_article.html.erb
+#page
+  = render('pages/organisms/global/header')
+  %div{ role: 'main' }
+    = render('pages/organisms/article/article_body')
+  = render('pages/organisms/global/footer')

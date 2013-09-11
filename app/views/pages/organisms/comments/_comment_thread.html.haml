@@ -1,0 +1,23 @@
+%section.comments.section
+  #comments-container.comments-container
+    %h2.section-title 50 Comments
+    = render('pages/molecule/forms/comment-form')
+    = render('pages/molecule/navigation/tabs_newest_oldest')
+    .comments-stream
+      = render('pages/molecules/components/single_comment')
+
+<section class="comments section">
+	<div class="comments-container" id="comments-container">
+		<h2 class="section-title">59 Comments</h2>
+		<?php inc('molecule','comment-form'); ?>
+		<?php inc('molecule','tabs-newest-oldest'); ?>
+		<div class="fyre-stream-content">
+			<?php inc('molecule','single-comment'); ?>
+			<?php inc('molecule','single-comment'); ?>
+			<?php inc('molecule','single-comment'); ?>
+			<?php inc('molecule','single-comment'); ?>
+			<?php inc('molecule','single-comment'); ?>
+		</div>
+	</div>
+	<?php inc('molecule','pagination') ?>
+</section>

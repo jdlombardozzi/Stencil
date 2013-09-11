@@ -5,5 +5,10 @@
 
 .sg-pattern
   %h4.sg-head.sg-sub
+    = link_to('Comment with reply', index_url(url: 'molecules/components/comment_with_reply'))
+  = render('pages/molecules/components/comment_with_reply')
+
+.sg-pattern
+  %h4.sg-head.sg-sub
     = link_to('Sharingbar', index_url(url: 'molecules/components/sharingbar'))
   = render('pages/molecules/components/sharingbar')
