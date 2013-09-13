@@ -1,5 +1,9 @@
 #page
   = render('pages/organisms/global/header')
-  %main{ role: 'main' }
-    = render('pages/organisms/article/article_body')
+  %main.g-wrapper{ role: 'main' }
+    .g-col-1
+      = render('pages/organisms/article/article')
+    .g-col-1
+      = render('pages/organisms/article/sidebar')
+
   = render('pages/organisms/global/footer')
