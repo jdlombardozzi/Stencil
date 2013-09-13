@@ -1,0 +1,24 @@
+/* Global */
+// * {
+//   @include box-sizing(border-box);
+// }
+
+.cf {
+  @include clearfix;
+}
+
+.ir {
+  @include image-replacement;
+}
+
+.hidden {
+  @include hidden;
+}
+
+.visuallyhidden {
+  @include visuallyhidden;
+}
+
+.invisible {
+  @include invisible;
+}

@@ -5,7 +5,7 @@ button,
 input,
 select,
 textarea {
-    color: #222;
+    color: $black;
 }
 
 html {
@@ -13,11 +13,12 @@ html {
     line-height: 1.4;
 }
 
+// a better looking default horizontal rule
 hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid $gray;
     margin: 1em 0;
     padding: 0;
 }

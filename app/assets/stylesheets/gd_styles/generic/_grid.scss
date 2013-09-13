@@ -1,1 +1,19 @@
 /* Grid */
+
+.g-wrapper {
+  @include outer-container;
+}
+
+.g-row {
+  @include row;
+}
+
+@for $i from 1 through 4 {
+  .g-col-#{$i} {
+    @include span-columns(12/$i);
+  }
+}
+
+.g-omega {
+  @include omega;
+}

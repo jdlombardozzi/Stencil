@@ -10,8 +10,12 @@
     %meta{ name: "viewport", content: "width=device-width, initial-scale=1" }/
     = csrf_meta_tags
 
+    -# = stylesheet_link_tag( 'styles', media: 'all', data: { 'turbolinks-track' => true } )
     = stylesheet_link_tag( 'gd_styles', media: 'all', data: { 'turbolinks-track' => true } )
     = javascript_include_tag( 'modernizr' )
+
+    /[if lte IE8]
+      = javascript_include_tag('polyfills')
 
   %body
     = render("/pages/#{@id}")

@@ -1,4 +1,8 @@
-%h3.sg-head= link_to('Global', index_url(url: 'organisms/global/header'))
+%h3.sg-head= link_to('Global', index_url(url: 'organisms/global/index'))
 = render('pages/organisms/global/index')
 
--# %h3.sg-head= link_to('')
+%h3.sg-head= link_to('Comments', index_url(url: 'organisms/comments/index'))
+= render('pages/organisms/comments/index')
+
+%h3.sg-head= link_to('Components', index_url(url: 'organisms/components/index'))
+= render('pages/organisms/components/index')

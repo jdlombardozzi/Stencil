@@ -1,0 +1,10 @@
+/* Links */
+
+a {
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    color: $gray;
+  }
+}
