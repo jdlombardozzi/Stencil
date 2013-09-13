@@ -4,3 +4,27 @@ body {
   background: $white;
 }
 
+// remove for production
+.g-wrapper {
+  &.demo {
+    border: 1px solid $black;
+    text-align: center;
+
+    > div:nth-of-type(odd) {
+      background: $gray;
+    }
+
+    &.nested {
+      > div:nth-of-type(odd) {
+        background: $white;
+      }
+
+      > div > div {
+        margin-bottom: 1em;
+        &:nth-of-type(odd) {
+          background: $gray;
+        }
+      }
+    }
+  }
+}

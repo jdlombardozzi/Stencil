@@ -4,6 +4,10 @@
   @include outer-container;
 }
 
+.g-fill {
+  @include fill-parent;
+}
+
 .g-row {
   @include row;
 }
@@ -11,6 +15,20 @@
 @for $i from 1 through 4 {
   .g-col-#{$i} {
     @include span-columns(12/$i);
+
+    .g-col-1 {
+      @extend .g-fill;
+    }
+
+    @for $j from 2 through 4 {
+      .g-col-#{$j} {
+        @include span-columns(12/$j of 12);
+      }
+    }
+
+    .g-omega {
+      @extend .g-omega;
+    }
   }
 }
 
