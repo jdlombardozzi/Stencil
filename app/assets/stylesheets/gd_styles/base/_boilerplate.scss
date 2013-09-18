@@ -1,0 +1,36 @@
+/* Boilerplate */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: $text-color
+}
+
+html {
+    font-size: 100%; //$font-size-base;
+    line-height: $line-height-base;
+}
+
+// a better looking default horizontal rule
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $gray;
+    margin: 1em 0;
+    padding: 0;
+}
+
+// links
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+}

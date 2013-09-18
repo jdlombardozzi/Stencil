@@ -1,37 +1,56 @@
 /* Grid */
 
 .g-wrapper {
-  @include outer-container;
-}
-
-.g-fill {
-  @include fill-parent;
+  margin: {
+    right: auto;
+    left: auto;
+  }
+  padding: {
+    left: $grid-gutter-width / 2;
+    right: $grid-gutter-width / 2;
+  }
+  @include clearfix;
 }
 
 .g-row {
-  @include row;
+  margin: {
+    left: $grid-gutter-width / -2;
+    right: $grid-gutter-width / -2;
+  }
+  @include clearfix;
 }
 
-@for $i from 1 through 4 {
+%g-col {
+  float: left;
+  min-height: 1px;
+  padding: {
+    left: $grid-gutter-width / 2;
+    right: $grid-gutter-width / 2
+  }
+  position: relative;
+}
+
+@for $i from 1 through $grid-columns - 1 {
   .g-col-#{$i} {
-    @include span-columns(12/$i);
-
-    .g-col-1 {
-      @extend .g-fill;
-    }
-
-    @for $j from 2 through 4 {
-      .g-col-#{$j} {
-        @include span-columns(12/$j of 12);
-      }
-    }
-
-    .g-omega {
-      @extend .g-omega;
-    }
+    width: percentage($i / $grid-columns);
+    @extend %g-col;
   }
 }
 
-.g-omega {
-  @include omega;
+@media (min-width: $bp-small) {
+  .g-wrapper {
+    max-width: $grid-wrapper-small;
+  }
+}
+
+@media (min-width: $bp-medium) {
+  .g-wrapper {
+    max-width: $grid-wrapper-medium;
+  }
+}
+
+@media (min-width: $bp-large) {
+  .g-wrapper {
+    max-width: $grid-wrapper-large;
+  }
 }

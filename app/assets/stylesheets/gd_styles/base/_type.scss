@@ -1,0 +1,58 @@
+/* Type */
+
+p {
+  font-size: $font-size-base;
+  margin: 0 0 ($line-height-computed / 2);
+}
+
+.intro {
+  font-weight: bold;
+}
+
+// headings
+%headings-base {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+
+  small {
+    font-weight: normal;
+    line-height: 1;
+  }
+}
+
+%headings-large {
+  margin: {
+    top: $line-height-computed;
+    bottom: $line-height-computed / 2;
+  }
+}
+
+%headings-small {
+  margin: {
+    top: $line-height-computed / 2;
+    bottom: $line-height-computed / 2;
+  }
+}
+
+@for $i from 1 through 6 {
+  h#{$i},
+  .h#{$i} {
+    @extend %headings-base;
+    font-size: em(36 - (($i - 1) * 6)); // 36 decreases by 6 each smaller heading
+  }
+}
+
+@for $i from 1 through 3 {
+  h#{$i},
+  .h#{$i} {
+    @extend %headings-large;
+  }
+}
+
+@for $i from 4 through 6 {
+  h#{$i},
+  .h#{$i} {
+    @extend %headings-small;
+  }
+}

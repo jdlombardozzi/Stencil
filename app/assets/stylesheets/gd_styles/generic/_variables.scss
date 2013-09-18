@@ -1,3 +1,53 @@
-$black: #222;
-$gray: #ccc;
+// colors
+$black: lighten(#000, 13.5%); // #222
+$gray-dark: lighten(#000, 20%);   // #333
+$gray: lighten(#000, 33.5%); // #555
+$gray-light: lighten(#000, 60%);   // #999
+$gray-lighter: lighten(#000, 93.5%); // #eee
 $white: #fff;
+
+$brand-primary:         #428bca;
+$brand-success:         #5cb85c;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+$brand-info:            #5bc0de;
+
+// boilerplate
+$body-bg: $white;
+$text-color: $black;
+
+// links
+$link-color: $brand-primary;
+$link-hover-color: darken($link-color, 15%);
+
+// breakpoints
+// these are only examples. they are not to be used blindly, adjust them
+// based on the content of the page.
+$bp-small: em(768) !default;
+$bp-medium: em(992) !default;
+$bp-large: em(1200) !default;
+
+// grid
+$grid-wrapper-small: em(750) !default;
+$grid-wrapper-medium: em(970) !default;
+$grid-wrapper-large: em(1170) !default;
+
+$grid-columns: 12 !default;
+$grid-gutter-width: em(30) !default;
+
+// type
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif: Georgia, "Times New Roman", Times, serif;
+$font-family-monospace: Monaco, Menlo, Consolas, "Courier New", monospace;
+$font-family-base: $font-family-sans-serif;
+
+$font-size-base: em(14);
+$font-size-large: em(18);
+$font-size-small: em(12);
+
+$line-height-base: (20/14);
+$line-height-computed: em($line-height-base);
+
+$headings-font-family: $font-family-base;
+$headings-font-weight: 500;
+$headings-line-height: 1.1;

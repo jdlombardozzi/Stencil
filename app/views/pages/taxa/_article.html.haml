@@ -1,9 +1,14 @@
-#page
-  = render('pages/organisms/global/header')
-  %main.g-wrapper{ role: 'main' }
-    .g-col-1
+#page.g-wrapper
+  .g-row
+    .g-col-12
+    = render('pages/organisms/global/header')
+
+  %main.g-row{ role: 'main' }
+    .g-col-9
       = render('pages/organisms/article/article')
-    .g-col-1
+    .g-col-3
       = render('pages/organisms/article/sidebar')
 
-  = render('pages/organisms/global/footer')
+  .g-row
+    .g-col-12
+      = render('pages/organisms/global/footer')

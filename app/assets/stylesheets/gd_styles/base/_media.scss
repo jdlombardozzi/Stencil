@@ -10,6 +10,6 @@ video {
 }
 
 // images can be no larger than their container
-img {
-  max-width: 100%;
+.img-responsive {
+  @include img-responsive;
 }

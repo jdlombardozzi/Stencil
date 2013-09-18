@@ -1,29 +1,27 @@
 /* Main */
 
 body {
-  background: $white;
+  background: $body-bg;
 }
 
 // remove for production
 .g-wrapper {
+  background: $gray-lighter;
+
   &.demo {
-    border: 1px solid $black;
+    margin-bottom: 1em;
     text-align: center;
 
-    > div:nth-of-type(odd) {
-      background: $gray;
-    }
-
-    &.nested {
-      > div:nth-of-type(odd) {
-        background: $white;
+    > div {
+      background: $gray-lighter;
+      border: 1px solid $gray;
+      margin:  {
+        top: .5em;
+        bottom: .5em;
       }
-
-      > div > div {
-        margin-bottom: 1em;
-        &:nth-of-type(odd) {
-          background: $gray;
-        }
+      padding:  {
+        top: .5em;
+        bottom: .5em;
       }
     }
   }
