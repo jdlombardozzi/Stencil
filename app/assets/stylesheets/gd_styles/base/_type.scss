@@ -1,6 +1,8 @@
 /* Type */
 
-p {
+// text
+p,
+.text {
   font-size: $font-size-base;
   margin: 0 0 ($line-height-computed / 2);
 }
@@ -35,12 +37,25 @@ p {
   }
 }
 
-@for $i from 1 through 6 {
+@for $i from 1 through 4 {
   h#{$i},
   .h#{$i} {
     @extend %headings-base;
-    font-size: em(36 - (($i - 1) * 6)); // 36 decreases by 6 each smaller heading
+    // h1 starts at 36px, decreases by 6 each smaller heading
+    font-size: em(36 - (($i - 1) * 6));
   }
+}
+
+h5,
+.h5 {
+  @extend %headings-base;
+  font-size: $font-size-base;
+}
+
+h6,
+.h6 {
+  @extend %headings-base;
+  font-size: $font-size-small;
 }
 
 @for $i from 1 through 3 {
@@ -54,5 +69,36 @@ p {
   h#{$i},
   .h#{$i} {
     @extend %headings-small;
+  }
+}
+
+// lists
+ul,
+ol {
+  margin: {
+    top: 0;
+    bottom: $line-height-computed / 2;
+  }
+
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-inline {
+  @extend .list-unstyled;
+
+  > li {
+    display: inline-block;
+    padding: {
+      left: em(5);
+      right: em(5);
+    }
   }
 }

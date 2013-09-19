@@ -1,7 +1,7 @@
-%div.sg-main{ role: 'main' }
+%div.sg-main.g-wrapper{ role: 'main' }
   -# Patterns
-  %div#patterns
-    %div.sg-pattern
+  %div#patterns.g-row
+    %div.sg-pattern.g-col-12
       %h2.sg-head
         = link_to('Atoms', index_url(url: 'atoms/index'))
       = render('pages/atoms/index')

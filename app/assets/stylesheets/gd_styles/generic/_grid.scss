@@ -21,36 +21,84 @@
 }
 
 %g-col {
-  float: left;
-  min-height: 1px;
-  padding: {
-    left: $grid-gutter-width / 2;
-    right: $grid-gutter-width / 2
-  }
-  position: relative;
+  @include grid-column($grid-gutter-width);
 }
 
-@for $i from 1 through $grid-columns - 1 {
-  .g-col-#{$i} {
-    width: percentage($i / $grid-columns);
+%g-float {
+  float: $layout-direction;
+}
+
+// setup base columns
+@for $i from 1 through $grid-columns {
+  .g-col-#{$i},
+  .g-small-#{$i},
+  .g-medium-#{$i},
+  .g-large-#{$i} {
     @extend %g-col;
   }
 }
 
+// mobile first columns
+@for $i from 1 through $grid-columns {
+  .g-col-#{$i} {
+    @extend %g-float;
+  }
+}
+
+@for $i from 1 through $grid-columns {
+  .g-col-#{$i} {
+    width: percentage($i / $grid-columns);
+  }
+}
+
+// breakpoint columns
 @media (min-width: $bp-small) {
+  %mq-float {
+    float: $layout-direction;
+  }
+
   .g-wrapper {
     max-width: $grid-wrapper-small;
+  }
+
+  @for $i from 1 through $grid-columns {
+    .g-small-#{$i} {
+      width: percentage($i / $grid-columns);
+      @extend %mq-float;
+    }
   }
 }
 
 @media (min-width: $bp-medium) {
+  %mq-float {
+    float: $layout-direction;
+  }
+
   .g-wrapper {
     max-width: $grid-wrapper-medium;
+  }
+
+  @for $i from 1 through $grid-columns {
+    .g-medium-#{$i} {
+      width: percentage($i / $grid-columns);
+      @extend %mq-float;
+    }
   }
 }
 
 @media (min-width: $bp-large) {
+  %mq-float {
+    float: $layout-direction;
+  }
+
   .g-wrapper {
     max-width: $grid-wrapper-large;
+  }
+
+  @for $i from 1 through $grid-columns {
+    .g-large-#{$i} {
+      width: percentage($i / $grid-columns);
+      @extend %mq-float;
+    }
   }
 }

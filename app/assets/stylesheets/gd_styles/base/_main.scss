@@ -26,3 +26,20 @@ body {
     }
   }
 }
+
+.sg-colors li {
+  border: 1px solid $gray-light;
+  width: 5em;
+}
+
+.sg-swatch {
+  border: 1px solid $gray-light;
+  display: block;
+  margin: 0 auto;
+  height: 50px;
+  width: 50px;
+}
+
+.sg-label {
+  display: block;
+}

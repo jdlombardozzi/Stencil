@@ -1,25 +1,19 @@
 :ruby
   colors = {
-    gray: '#808080',
-    gray_light: '#f9f9f9',
-    gray_light_2: '#eee',
-    gray_light_3: '#ddd',
-    gray_light_4: '#bbb',
-    gray_med: '#666',
+    black: '#222',
     gray_dark: '#333',
-    gray_dark_2: '#131313',
+    gray: '#555',
+    gray_light: '#999',
+    gray_lighter: '#eee',
     white: '#fff',
-    black: '#000',
-    dim: 'rgba(0,0,0,0.5)',
-    dimmer: 'rgba(0,0,0,0.8)',
-    error: '#f00',
-    valid: '#089e00',
-    brand_facebook: '#03539e',
-    brand_twitter: '#35ccff',
-    brand_linkedin: '#217bc1'
+    brand_primary: '#428bca',
+    brand_success: '#5cb85c',
+    brand_warning: '#f0ad4e',
+    brand_danger: '#d9534f',
+    brand_info: '#5bc0de'
   }
 
-%ul.sg-colors
+%ul.sg-colors.list-inline
   - colors.each do |color, hex|
     %li
       %span.sg-swatch{ style: "background: #{hex}"}

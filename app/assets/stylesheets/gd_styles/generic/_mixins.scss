@@ -56,3 +56,18 @@
   max-width: 100%;
   height: auto;
 }
+
+@mixin grid-column($gutter-width, $column-size: false, $total-columns: false) {
+  min-height: 1px;
+  padding: {
+    left: $gutter-width / 2;
+    right: $gutter-width / 2
+  }
+  position: relative;
+
+  @if $column-size {
+    @if $total-columns {
+      width: percentage($column-size / $total-columns);
+    }
+  }
+}
