@@ -4,42 +4,7 @@ body {
   background: $body-bg;
 }
 
-// remove for production
-.g-wrapper {
-  background: $gray-lighter;
-
-  &.demo {
-    margin-bottom: 1em;
-    text-align: center;
-
-    > div {
-      background: $gray-lighter;
-      border: 1px solid $gray;
-      margin:  {
-        top: .5em;
-        bottom: .5em;
-      }
-      padding:  {
-        top: .5em;
-        bottom: .5em;
-      }
-    }
-  }
+section {
+  margin-bottom: $padding-large-vertical;
 }
 
-.sg-colors li {
-  border: 1px solid $gray-light;
-  width: 5em;
-}
-
-.sg-swatch {
-  border: 1px solid $gray-light;
-  display: block;
-  margin: 0 auto;
-  height: 50px;
-  width: 50px;
-}
-
-.sg-label {
-  display: block;
-}

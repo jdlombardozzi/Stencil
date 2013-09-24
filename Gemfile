@@ -8,7 +8,6 @@ end
 
 # Project specific gems
 gem 'rails', '4.0.0'
-gem 'turbolinks' # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 #gem 'jbuilder', '~> 1.2' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'gditweb', '3.0.0', :git => 'git@git.gditweb.com:gditweb_plugin', :branch => 'release/3.0.0'
 gem 'protected_attributes'

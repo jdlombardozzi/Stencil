@@ -1,0 +1,31 @@
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  padding: $padding-base-vertical $padding-base-horizontal;
+  margin-bottom: 0;
+  font-size: $font-size-base;
+  font-weight: $btn-font-weight;
+  line-height: $line-height-base;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius $border-radius-base;
+  white-space: nowrap;
+  @include user-select(none);
+  @include tab-focus($gray-dark);
+}
+
+.btn-alt {
+
+}
+
+.btn-disabled {
+
+}
+
+.btn-link {
+
+}

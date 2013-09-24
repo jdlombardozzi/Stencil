@@ -52,3 +52,52 @@ $line-height-computed: em($line-height-base);
 $headings-font-family: $font-family-base;
 $headings-font-weight: 500;
 $headings-line-height: 1.1;
+
+// components
+$padding-base-vertical: 6px; //em(6);
+$padding-base-horizontal: 12px; //em(12);
+
+$padding-large-vertical: 10px; //em(10);
+$padding-large-horizontal: 16px; //em(16);
+
+$padding-small-vertical: 5px; //em(5);
+$padding-small-horizontal: 10px; //em(10);
+
+$line-height-large: 1.33;
+$line-height-small: 1.5;
+
+$border-radius-base: 4px;
+$border-radius-large: 6px;
+$border-radius-small: 3px;
+
+$component-active-color: $white;
+$component-active-bg: $brand-primary;
+
+// buttons
+$btn-font-weight: bold;
+
+$btn-default-color: $gray-dark;
+$btn-default-bg: $white;
+$btn-default-border: $gray-light;
+
+$btn-primary-color: $white;
+$btn-primary-bg: $brand-primary;
+$btn-primary-border: darken($btn-primary-bg, 5%);
+
+$btn-success-color: $white;
+$btn-success-bg: $brand-success;
+$btn-success-border: darken($btn-success-bg, 5%);
+
+$btn-warning-color: $white;
+$btn-warning-bg: $brand-warning;
+$btn-warning-border: darken($btn-warning-bg, 5%);
+
+$btn-danger-color: $white;
+$btn-danger-bg: $brand-danger;
+$btn-danger-border: darken($btn-danger-bg, 5%);
+
+$btn-info-color: $white;
+$btn-info-bg: $brand-info;
+$btn-info-border: darken($btn-info-bg, 5%);
+
+$btn-link-disabled-color: $gray-light;

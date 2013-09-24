@@ -1,13 +1,13 @@
 #page.g-wrapper
   .g-row
     .g-col-12
-    = render('pages/organisms/global/header')
+      = render('pages/organisms/global/header')
 
   %main.g-row{ role: 'main' }
-    .g-col-9
+    .g-small-9
       = render('pages/organisms/article/article')
-    .g-col-3
-      = render('pages/organisms/article/sidebar')
+    .g-small-3
+      = render('pages/organisms/components/sidebar')
 
   .g-row
     .g-col-12

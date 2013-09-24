@@ -1,0 +1,86 @@
+@import 'bourbon';
+@import 'generic/variables';
+
+// style guide components
+.g-wrapper {
+  background: $gray-lighter;
+
+  &.demo {
+    margin-bottom: 1em;
+    text-align: center;
+
+    > div {
+      background: $gray-lighter;
+      border: 1px solid $gray;
+      margin:  {
+	top: .5em;
+	bottom: .5em;
+      }
+      padding:  {
+	top: .5em;
+	bottom: .5em;
+      }
+    }
+  }
+}
+
+.sg-head {
+  margin-bottom: $padding-large-vertical;
+  font-size: $font-size-small;
+
+  a {
+    display: block;
+    color: $gray-dark;
+    border-bottom: 1px solid $gray-dark;
+
+    &:hover {
+      text-decoration: none;
+      background-color: transparent;
+      color: $brand-primary;
+    }
+  }
+}
+
+.sg-sub {
+  margin-bottom: $padding-large-vertical;
+
+  a {
+    color: $gray-dark;
+    border-bottom: 1px solid $gray-dark;
+  }
+}
+
+.sg-colors li {
+  border: 1px solid $gray-light;
+  width: 5em;
+}
+
+.sg-swatch {
+  border: 1px solid $gray-light;
+  display: block;
+  margin: 0 auto;
+  height: 50px;
+  width: 50px;
+}
+
+.sg-label {
+  display: block;
+  overflow: hidden;
+
+  &:hover {
+    overflow: none;
+  }
+}
+
+.sg-pattern {
+  margin: {
+    left: $padding-large-horizontal;
+    bottom: $padding-large-vertical;
+  }
+
+  a {
+    &:hover {
+      background-color: desaturate(lighten($brand-primary, 35%), 10%);
+    }
+  }
+}

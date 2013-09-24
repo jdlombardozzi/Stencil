@@ -24,3 +24,7 @@
 .invisible {
   @include invisible;
 }
+
+.font-secondary {
+  font-family: $font-family-serif;
+}

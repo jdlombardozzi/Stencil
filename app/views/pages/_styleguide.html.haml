@@ -1,14 +1,15 @@
 %div.sg-main.g-wrapper{ role: 'main' }
   -# Patterns
   %div#patterns.g-row
-    %div.sg-pattern.g-col-12
+    %section.g-col-12
       %h2.sg-head
         = link_to('Atoms', index_url(url: 'atoms/index'))
       = render('pages/atoms/index')
+    %section.g-col-12
       %h2.sg-head
         = link_to('Molecules', index_url(url: 'molecules/index'))
       = render('pages/molecules/index')
+    %section.g-col-12
       %h2.sg-head
         = link_to('Organisms', index_url(url: 'organism/index'))
       = render('pages/organisms/index')
-      %h2.sg-head

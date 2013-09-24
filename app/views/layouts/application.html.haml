@@ -4,13 +4,13 @@
     %meta{ charset: "utf-8" }/
     %meta{ 'http-equiv' => "X-UA-Compatible", content: "IE=edge" }/
 
-    %title Stencil Pattern Lab
+    %title= "#{params[:id]} - Stencil Pattern Lab"
 
     %meta{ name: "description", content: "Boilerplate for layouts and styles" }/
     %meta{ name: "viewport", content: "width=device-width, initial-scale=1" }/
     = csrf_meta_tags
 
-    = stylesheet_link_tag('application', media: 'all', data: { 'turbolinks-track' => true })
+    = stylesheet_link_tag('application', media: 'all')
     = javascript_include_tag('modernizr')
 
   %body.sg-nav-wrapper
@@ -27,4 +27,4 @@
         #sg-rightpull-container
           #sg-rightpull
 
-    = javascript_include_tag( 'application', data: { 'turbolinks-track' => true } )
+    = javascript_include_tag('application')
