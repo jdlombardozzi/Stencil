@@ -4,47 +4,6 @@
 
 }
 
-.block-features-horizontal {
-  background: $gray-light;
-  margin-bottom: $padding-large-vertical;
-  padding: {
-    top: $padding-base-vertical;
-    bottom: $padding-base-vertical;
-  }
-  @include clearfix;
-
-  // .b-thumb {
-  //     max-width: 50%;
-  //     display: inline-block;
-  // }
-
-  .headline {
-    font-size: $font-size-base;
-  }
-}
-
-@media (max-width: $bp-smaller) {
-  .block-features-horizontal {
-    li {
-      @include grid-column(30, 6, 12);
-
-      &:nth-child(n+3) {
-        @include hidden;
-      }
-    }
-  }
-}
-
-@media (max-width: $bp-small) {
-  .block-features-horizontal {
-    li {
-      &:last-child {
-        @include hidden;
-      }
-    }
-  }
-}
-
 
 .b-inner {
 
@@ -54,8 +13,6 @@
 
 }
 
-.b-texxt {
+.b-text {
 
 }
-
-

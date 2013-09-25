@@ -1,6 +1,11 @@
 .header {
   border-bottom: 1px solid $gray;
   margin-bottom: $padding-large-vertical;
+  padding-top: $padding-large-vertical;
+
+  .nav {
+    display: block;
+  }
 }
 
 .logo {

@@ -25,6 +25,29 @@
   @include invisible;
 }
 
+.sr-only {
+  position: absolute;
+  @include square(1px);
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
 .font-secondary {
   font-family: $font-family-serif;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.affixed {
+  position: fixed;
+  top: 0;
 }

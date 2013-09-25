@@ -46,23 +46,18 @@
 		}
 	};
 
-	$.fn[pluginName] = function (options, arg) {
+	$.fn[pluginName] = function (option) {
 		return this.each(function() {
-			if (!$.data(this, "plugin_" + pluginName)) {
-				$.data(this, "plugin_" + pluginName, new Modal( this, options));
-			} else {
-				// methods
-				var modal = $.data(this, "plugin_" + pluginName);
+			var modal = $.data(this, "plugin_" + pluginName),
+			options = typeof option === 'object' && option;
 
-				if (options && typeof(options) === 'string') {
-					if (options === 'open') {
-						modal.open(arg);
-					}
+			if (!modal) {
+				$.data(this, "plugin_" + pluginName, (modal = new Modal(this, options)));
+			}
 
-					if (options === 'close') {
-						modal.close(arg);
-					}
-				}
+			// methods
+			if (option && typeof(option) === 'string') {
+				modal[option]();
 			}
 		});
 	};

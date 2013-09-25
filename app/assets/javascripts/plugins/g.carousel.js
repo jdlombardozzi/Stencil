@@ -89,10 +89,17 @@
 	// 	return (100 * (parseFloat(left) / parseFloat(parentWidth))) + '%';
 	// }
 
-	$.fn[pluginName] = function (options) {
+	$.fn[pluginName] = function (option) {
 		return this.each(function() {
-			if (!$.data(this, "plugin_" + pluginName)) {
-				$.data(this, "plugin_" + pluginName, new Carousel( this, options) );
+			var carousel = $.data(this, "plugin_" + pluginName),
+			options = typeof option === 'object' && option;
+
+			if (!carousel) {
+				$.data(this, "plugin_" + pluginName, (carousel = new Carousel(this, options)));
+			}
+
+			if (option && typeof option === 'string') {
+				carousel[option]();
 			}
 		});
 	};

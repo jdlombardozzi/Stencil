@@ -1,1 +1,15 @@
-Homepage Template: pages/templates/_homepage.html.erb
+#page.g-wrapper
+  .g-row
+    .g-col-12
+      = render('pages/organisms/global/header')
+
+  %main.g-row{ role: 'main' }
+    .g-small-6
+      = render('pages/molecules/blocks/hero')
+    .g-small-3
+      = render('pages/molecules/blocks/spotlight')
+    .g-small-3
+
+  .g-row
+    .g-col-12
+      = render('pages/organisms/global/footer')

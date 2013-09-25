@@ -133,3 +133,12 @@
   background-color: transparent;
   border: 0;
 }
+
+/* GD */
+@mixin opacity($opacity) {
+  opacity: $opacity;
+
+  .no-opacity & {
+    filter: alpha(opacity=$opacity*100);
+  }
+}

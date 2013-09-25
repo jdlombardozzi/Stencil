@@ -1,0 +1,49 @@
+/* Article */
+
+.article {
+  .intro {
+    margin-bottom: $padding-base-vertical;
+  }
+}
+
+.features-horizontal {
+  background: $gray-light;
+  margin-bottom: $padding-large-vertical;
+  padding: {
+    top: $padding-base-vertical;
+    bottom: $padding-base-vertical;
+  }
+  @include clearfix;
+
+  // .b-thumb {
+    //     max-width: 50%;
+    //     display: inline-block;
+  // }
+
+  .headline {
+    font-size: $font-size-base;
+  }
+}
+
+
+// TODO: This is a tossup between adding media queries and including a hidden
+//       mixin, or adding responsive classes (i.e. https://github.com/twbs/bootstrap/blob/master/less/responsive-utilities.less).
+//       Classes would make it a lot harder to add in the views, especially
+//       when looping over multiple objects.
+@media (max-width: $bp-smaller) {
+  .features-horizontal-list li {
+    @include grid-column(30, 6, 12);
+
+    &:nth-child(n+3) {
+      @include hidden;
+    }
+  }
+}
+
+@media (max-width: $bp-small) {
+  .features-horizontal-list li {
+    &:last-child {
+      @include hidden;
+    }
+  }
+}
