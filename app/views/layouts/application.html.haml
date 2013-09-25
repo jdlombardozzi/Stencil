@@ -4,7 +4,7 @@
     %meta{ charset: "utf-8" }/
     %meta{ 'http-equiv' => "X-UA-Compatible", content: "IE=edge" }/
 
-    %title= "#{params[:id]} - Stencil Pattern Lab"
+    %title= "#{ params[:url] + ' - ' unless params[:url].blank? }Stencil Pattern Lab"
 
     %meta{ name: "description", content: "Boilerplate for layouts and styles" }/
     %meta{ name: "viewport", content: "width=device-width, initial-scale=1" }/

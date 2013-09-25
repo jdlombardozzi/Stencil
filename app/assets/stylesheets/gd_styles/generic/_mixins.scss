@@ -1,5 +1,6 @@
 /* Mixins */
 
+/* H5BP */
 // image replacement
 @mixin image-replacement {
   background-color: transparent;
@@ -51,6 +52,16 @@
   visibility: hidden;
 }
 
+
+/* Bootstrap 3 */
+@mixin center-block {
+  display: block;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
 @mixin img-responsive($display: block) {
   display: $display;
   max-width: 100%;
@@ -72,8 +83,53 @@
   }
 }
 
+@mixin responsive-visibility {
+  display: block !important;
+
+  tr & {
+    display: table-row !important;
+  }
+
+  th &,
+  td & {
+    display: table-cell !important;
+  }
+}
+
+@mixin responsive-invisibility {
+  &,
+  tr &,
+  th &,
+  td & {
+    display: none !important;
+  }
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin square($size) {
+  @include size($size, $size);
+}
+
 @mixin tab-focus($color: #333) {
   outline: thin dotted $color;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
+}
+
+@mixin text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
 }

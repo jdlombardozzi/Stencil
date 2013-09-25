@@ -23,6 +23,7 @@ $link-hover-color: darken($link-color, 15%);
 // breakpoints
 // these are only examples. they are not to be used blindly, adjust them
 // based on the content of the page.
+$bp-smaller: em(480) !default;
 $bp-small: em(768) !default;
 $bp-medium: em(992) !default;
 $bp-large: em(1200) !default;

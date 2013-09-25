@@ -1,8 +1,8 @@
 %header.header.cf{ role: 'banner' }
-  =# render('pages/atoms/media/logo')
+  = render('pages/atoms/images/logo')
   = link_to('#', class: ['nav-toggle', 'nav-toggle-search', 'icon-search']) do
-    %span.is-vishidden Search
+    %span.visuallyhidden Search
   = link_to('#', class: ['nav-toggle', 'nav-toggle-search', 'icon-search'], id: 'nav-toggle') do
-    %span.is-vis-hidden Menu
+    %span.visuallyhidden Menu
   = render('pages/molecules/forms/search')
   = render('pages/molecules/navigation/primary_nav')

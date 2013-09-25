@@ -1,0 +1,9 @@
+.block.block-features-horizontal
+  %ul.list-inline
+    - 4.times do
+      %li.g-col-4.g-small-3
+        %p.meta
+          %time{ datetime: Date.today } YYYY-MM-DD
+          |
+          %span= link_to('Topic', '#')
+        = render('pages/molecules/blocks/thumb_headline')

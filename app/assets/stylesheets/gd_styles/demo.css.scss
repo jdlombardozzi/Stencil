@@ -1,10 +1,9 @@
 @import 'bourbon';
 @import 'generic/variables';
+@import 'generic/mixins';
 
 // style guide components
 .g-wrapper {
-  background: $gray-lighter;
-
   &.demo {
     margin-bottom: 1em;
     text-align: center;
@@ -13,12 +12,12 @@
       background: $gray-lighter;
       border: 1px solid $gray;
       margin:  {
-	top: .5em;
-	bottom: .5em;
+        top: .5em;
+        bottom: .5em;
       }
       padding:  {
-	top: .5em;
-	bottom: .5em;
+        top: .5em;
+        bottom: .5em;
       }
     }
   }
@@ -52,7 +51,9 @@
 
 .sg-colors li {
   border: 1px solid $gray-light;
-  width: 5em;
+  @include square(5em);
+  padding-top: $padding-base-vertical;
+  margin-bottom: $padding-base-vertical;
 }
 
 .sg-swatch {

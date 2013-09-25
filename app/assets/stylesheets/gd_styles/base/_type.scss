@@ -97,8 +97,8 @@ ol {
   > li {
     display: inline-block;
     padding: {
-      left: em(5);
-      right: em(5);
+      left: $padding-base-horizontal;
+      right: $padding-base-horizontal;
     }
   }
 }
