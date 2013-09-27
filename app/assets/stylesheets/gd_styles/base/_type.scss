@@ -3,74 +3,95 @@
 // text
 p,
 .text {
-  font-size: $font-size-base;
   margin: 0 0 ($line-height-computed / 2);
+  font-size: $font-size-base;
 }
 
-.intro {
+.lead {
+  margin-bottom: $line-height-computed;
   font-weight: bold;
+  font-weight: 200;
+  line-height: 1.4;
+}
+
+small,
+.small {
+  font-size: 85%;
 }
 
 // headings
-%headings-base {
-  font-family: $headings-font-family;
-  font-weight: $headings-font-weight;
-  line-height: $headings-line-height;
+@for $i from 1 through 6 {
+  h#{$i},
+  .h#{$i} {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+    color: $headings-color;
+
+    small {
+      font-weight: normal;
+      line-height: 1;
+      color: $headings-small-color;
+    }
+  }
+}
+
+h1,
+h2,
+h3  {
+  margin: {
+    top: #{$line-height-px}px;
+    bottom: #{$line-height-computed / 2}px;
+  }
 
   small {
-    font-weight: normal;
-    line-height: 1;
+    font-size: 65%;
   }
 }
 
-%headings-large {
-  margin: {
-    top: $line-height-computed;
-    bottom: $line-height-computed / 2;
-  }
-}
-
-%headings-small {
+h4,
+h5,
+h6 {
   margin: {
     top: $line-height-computed / 2;
     bottom: $line-height-computed / 2;
   }
+
+  small {
+    font-size: 75%;
+  }
 }
 
-@for $i from 1 through 4 {
-  h#{$i},
-  .h#{$i} {
-    @extend %headings-base;
-    // h1 starts at 36px, decreases by 6 each smaller heading
-    font-size: em(36 - (($i - 1) * 6));
-  }
+h1,
+.h1 {
+  font-size: $font-size-h1;
+}
+
+h2,
+.h2 {
+  font-size: $font-size-h2;
+}
+
+h3,
+.h3 {
+  font-size: $font-size-h3;
+}
+
+h4,
+.h4 {
+  font-size: $font-size-h4;
 }
 
 h5,
 .h5 {
-  @extend %headings-base;
-  font-size: $font-size-base;
+  font-size: $font-size-h5;
 }
 
 h6,
 .h6 {
-  @extend %headings-base;
-  font-size: $font-size-small;
+  font-size: $font-size-h6;
 }
 
-@for $i from 1 through 3 {
-  h#{$i},
-  .h#{$i} {
-    @extend %headings-large;
-  }
-}
-
-@for $i from 4 through 6 {
-  h#{$i},
-  .h#{$i} {
-    @extend %headings-small;
-  }
-}
 
 // lists
 ul,

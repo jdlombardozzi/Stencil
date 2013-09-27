@@ -114,7 +114,7 @@
   @include size($size, $size);
 }
 
-@mixin tab-focus($color: #333) {
+@mixin tab-focus($color: $gray) {
   outline: thin dotted $color;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
@@ -138,6 +138,7 @@
 @mixin opacity($opacity) {
   opacity: $opacity;
 
+  // modernizr detection
   .no-opacity & {
     filter: alpha(opacity=$opacity*100);
   }

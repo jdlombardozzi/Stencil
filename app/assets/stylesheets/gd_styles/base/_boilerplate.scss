@@ -5,22 +5,38 @@ button,
 input,
 select,
 textarea {
-    color: $text-color
+  color: $text-color
 }
 
 html {
-    font-size: 100%;
-    line-height: $line-height-base;
+  font-size: 100%;
+  line-height: $line-height-base;
+}
+
+body {
+  font-family: $font-family-base;
+  color: $text-color;
+  background-color: $body-bg;
 }
 
 // a better looking default horizontal rule
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid $gray;
-    margin: 1em 0;
-    padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $gray;
+  margin: 1em 0;
+  padding: 0;
+}
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 // links
