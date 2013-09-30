@@ -21,3 +21,7 @@ video {
     }
   }
 }
+
+figure {
+  @include grid-column(30, 3 of 12);
+}

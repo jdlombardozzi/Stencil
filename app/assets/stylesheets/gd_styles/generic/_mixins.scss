@@ -68,18 +68,43 @@
   height: auto;
 }
 
-@mixin grid-column($gutter-width, $column-size: false, $total-columns: false) {
+@mixin grid-wrapper($gutter-width: $grid-gutter-width) {
+  margin: {
+    right: auto;
+    left: auto;
+  }
+  padding: {
+    left: $grid-gutter-width / 2;
+    right: $grid-gutter-width / 2;
+  }
+  @include clearfix;
+}
+
+@mixin grid-row($gutter-width: $grid-gutter-width) {
+  margin: {
+    left: $grid-gutter-width / -2;
+    right: $grid-gutter-width / -2;
+  }
+  @include clearfix;
+}
+
+@mixin grid-column-base($gutter-width: $grid-gutter-width) {
   min-height: 1px;
   padding: {
     left: $gutter-width / 2;
     right: $gutter-width / 2
   }
   position: relative;
+}
 
-  @if $column-size {
-    @if $total-columns {
-      width: percentage($column-size / $total-columns);
-    }
+@mixin grid-column($gutter-width, $column...) {
+  @include grid-column-base($gutter-width);
+
+  @if length($column) == 3 {
+    $columns: nth($column, 1);
+    $total-columns: nth($column, 3);
+
+    width: percentage($columns / $total-columns);
   }
 }
 

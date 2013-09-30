@@ -1,3 +1,19 @@
-%h4.sg-head.sg-sub= link_to('columns', index_url(url: 'molecules/layout/one_col'))
-= render('pages/molecules/layout/columns')
+.g-wrapper
+  .row
+    %h4.sg-head.sg-sub= link_to('all', index_url(url: 'molecules/layout/all'))
+= render('pages/molecules/layout/all')
 
+.g-wrapper
+  .row
+    %h4.sg-head.sg-sub= link_to('small', index_url(url: 'molecules/layout/small'))
+= render('pages/molecules/layout/small')
+
+.g-wrapper
+  .row
+    %h4.sg-head.sg-sub= link_to('medium', index_url(url: 'molecules/layout/medium'))
+= render('pages/molecules/layout/medium')
+
+.g-wrapper
+  .row
+    %h4.sg-head.sg-sub= link_to('large', index_url(url: 'molecules/layout/large'))
+= render('pages/molecules/layout/large')

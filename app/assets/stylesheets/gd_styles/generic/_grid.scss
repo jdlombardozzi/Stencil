@@ -1,31 +1,19 @@
 /* Grid */
 
 .g-wrapper {
-  margin: {
-    right: auto;
-    left: auto;
-  }
-  padding: {
-    left: $grid-gutter-width / 2;
-    right: $grid-gutter-width / 2;
-  }
-  @include clearfix;
+  @include grid-wrapper;
 }
 
 .g-row {
-  margin: {
-    left: $grid-gutter-width / -2;
-    right: $grid-gutter-width / -2;
-  }
-  @include clearfix;
+  @include grid-row;
 }
 
 %g-col {
-  @include grid-column($grid-gutter-width);
+  @include grid-column-base;
 }
 
 %g-float {
-  float: $layout-direction;
+  float: direction-from-layout();
 }
 
 // setup base columns
@@ -54,7 +42,7 @@
 // breakpoint columns
 @media (min-width: $bp-small) {
   %mq-float {
-    float: $layout-direction;
+    float: direction-from-layout();
   }
 
   .g-wrapper {
@@ -71,7 +59,7 @@
 
 @media (min-width: $bp-medium) {
   %mq-float {
-    float: $layout-direction;
+    float: direction-from-layout();
   }
 
   .g-wrapper {
@@ -88,7 +76,7 @@
 
 @media (min-width: $bp-large) {
   %mq-float {
-    float: $layout-direction;
+    float: direction-from-layout();
   }
 
   .g-wrapper {
