@@ -42,11 +42,6 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
-    gditweb (3.0.0)
-      mysql2
-      nokogiri
-      protected_attributes
-      rsolr
     haml (4.0.3)
       tilt
     highline (1.6.19)
@@ -60,11 +55,9 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.2)
     mime-types (1.25)
-    mini_portile (0.5.1)
     minitest (4.7.5)
     modernizr-rails (2.6.2.3)
     multi_json (1.8.0)
-    mysql2 (0.3.13)
     neat (1.4.0)
       bourbon (>= 2.1)
       sass (>= 3.2)
@@ -75,8 +68,6 @@ GEM
     net-ssh (2.7.0)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
-    nokogiri (1.6.0)
-      mini_portile (~> 0.5.0)
     normalize-rails (2.1.1)
     polyglot (0.3.3)
     protected_attributes (1.0.3)
@@ -104,8 +95,6 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.1.0)
-    rsolr (1.0.9)
-      builder (>= 2.1.2)
     rvm-capistrano (1.5.0)
       capistrano (>= 2.15.4)
     sass (3.2.11)
@@ -145,7 +134,6 @@ PLATFORMS
 
 DEPENDENCIES
   bourbon
-  gditweb (= 3.0.0)
   haml
   jquery-rails
   modernizr-rails
