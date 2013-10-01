@@ -6,8 +6,9 @@ require 'bundler/capistrano'
 
 # RVM integration
 require 'rvm/capistrano'
+set :deploy_via, :copy
+server 'dates.gditweb.com', :app, :web, :db, :primary => true
 
-server 'tofurkey.gditweb.com', :app, :web, :db, :primary => true
 set :user, 'ioweb'
 set :use_sudo, false
 set :deploy_to, '/home/ioweb/apps/stencil'
@@ -17,6 +18,7 @@ set :keep_releases, 3
 
 set :rvm_ruby_string, '2.0.0@stencil'
 set :rvm_type, :user # this is the money config, it defaults to :system
+
 
 ssh_options[:forward_agent] = true
 default_run_options[:pty] = true # prevent sudo tty errors if using sudo
