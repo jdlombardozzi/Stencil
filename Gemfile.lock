@@ -134,6 +134,7 @@ PLATFORMS
 
 DEPENDENCIES
   bourbon
+  execjs
   haml
   jquery-rails
   modernizr-rails
