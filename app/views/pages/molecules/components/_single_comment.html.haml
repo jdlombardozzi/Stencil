@@ -1,6 +1,7 @@
 .comment-container
   .comment-meta
-    = render('pages/atoms/images/avatar')
+    .comment-avatar.pull-left
+      = render('pages/atoms/images/avatar')
     %h4.comment-name
       = link_to('Comment author', '#')
   .comment-text

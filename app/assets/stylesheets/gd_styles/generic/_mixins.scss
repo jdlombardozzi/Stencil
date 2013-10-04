@@ -54,6 +54,34 @@
 
 
 /* Bootstrap 3 */
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $color;
+    background-color: darken($background, 8%);
+    border-color: darken($border, 12%);
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: $background;
+      border-color: $border;
+    }
+  }
+}
+
 @mixin center-block {
   display: block;
   margin: {
@@ -99,13 +127,14 @@
 
 @mixin grid-column($gutter-width, $column...) {
   @include grid-column-base($gutter-width);
+  $columns: nth($column, 1);
+  $total-columns: $grid-columns;
 
   @if length($column) == 3 {
-    $columns: nth($column, 1);
     $total-columns: nth($column, 3);
-
-    width: percentage($columns / $total-columns);
   }
+
+  width: percentage($columns / $total-columns);
 }
 
 @mixin responsive-visibility {
@@ -167,4 +196,9 @@
   .no-opacity & {
     filter: alpha(opacity=$opacity*100);
   }
+}
+
+@mixin rem-fallback($property, $value, $base: $font-size-main) {
+  #{$property}: #{$value * $base}px;
+  #{$property}: #{$value}rem;
 }

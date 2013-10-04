@@ -1,4 +1,6 @@
 .accordion
   - 2.times do
     .accordion-group
-      = render ('pages/molecules/blocks/headlines_list')
+      %ul.headlines-list.list-unstyled.text
+        - 5.times do
+          %li.accordion-item.headlines-item Lorem upsum headline slipsum

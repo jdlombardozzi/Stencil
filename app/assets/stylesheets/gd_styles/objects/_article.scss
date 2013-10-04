@@ -1,9 +1,31 @@
 /* Article */
 
 .article {
-  .intro {
+  .lead {
     margin-bottom: $padding-base-vertical;
   }
+
+  .aside {
+    padding-left: 0;
+  }
+}
+
+.article-figure,
+.article-gallery {
+  margin-bottom: $padding-base-vertical;
+}
+
+.article-figure {
+  @include grid-column($grid-gutter-width, 5);
+  float: direction-from-layout();
+  padding-left: 0;
+}
+
+.article-gallery {
+  @include grid-column($grid-gutter-width, 3);
+  float: direction-from-layout();
+  clear: left;
+  min-height: 5em;
 }
 
 .features-horizontal {
@@ -14,11 +36,6 @@
     bottom: $padding-base-vertical;
   }
   @include clearfix;
-
-  // .b-thumb {
-    //     max-width: 50%;
-    //     display: inline-block;
-  // }
 
   .headline {
     font-size: $font-size-base;
@@ -31,12 +48,8 @@
 //       Classes would make it a lot harder to add in the views, especially
 //       when looping over multiple objects.
 @media (max-width: $bp-smaller) {
-  .features-horizontal-list li {
-    @include grid-column(30, 6, 12);
-
-    &:nth-child(n+3) {
-      @include hidden;
-    }
+  .features-horizontal {
+    @include hidden;
   }
 }
 

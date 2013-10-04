@@ -2,10 +2,10 @@
   %fieldset
     .form-group
       %label{ for: 'comment-name' } Name
-      %input#comment-name{ class: 'form-control', type: 'text', placeholder: 'Enter your name' }
+      %input#comment-name.form-control{ type: 'text', placeholder: 'Enter your name' }
     .form-group
       %label{ for: 'comment-email' } Email
-      %input#comment-email{ class: 'form-control', type: 'email', placeholder: 'Your email address' }
+      %input#comment-email.form-control{ type: 'email', placeholder: 'Your email address' }
     .form-group
       %label{ for: 'comment-field' } Comment
-      %textarea.comment-field#comment-field{ rows: 5, placeholder: 'Write your comment here' }
+      %textarea#comment-field.form-control{ rows: 5, placeholder: 'Write your comment here' }

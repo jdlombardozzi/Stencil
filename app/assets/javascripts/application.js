@@ -13,6 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree ./plugins
-//= require_tree .
 
 $('.social-share').gAffix();

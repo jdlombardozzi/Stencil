@@ -13,18 +13,20 @@ body {
   &.demo {
     margin-bottom: 1em;
     text-align: center;
+  }
+}
 
-    > .g-row div {
-      background: $gray-lighter;
-      border: 1px solid $gray;
-      margin:  {
-        top: $padding-base-vertical;
-        bottom: $padding-base-vertical;
-      }
-      padding:  {
-        top: $padding-base-vertical;
-        bottom: $padding-base-vertical;
-      }
+.demo {
+  .g-row div {
+    background: $gray-lighter;
+    border: 1px solid $gray;
+    margin:  {
+      top: $padding-base-vertical;
+      bottom: $padding-base-vertical;
+    }
+    padding:  {
+      top: $padding-base-vertical;
+      bottom: $padding-base-vertical;
     }
   }
 }
@@ -40,7 +42,7 @@ body {
 
     &:hover {
       text-decoration: none;
-      background-color: transparent;
+      background-color: desaturate(lighten($brand-primary, 35%), 10%);
       color: $brand-primary;
     }
   }
@@ -84,11 +86,5 @@ body {
     left: $padding-large-horizontal;
     top: $padding-large-vertical;
     bottom: $padding-large-vertical;
-  }
-
-  a {
-    &:hover {
-      background-color: desaturate(lighten($brand-primary, 35%), 10%);
-    }
   }
 }
