@@ -1,9 +1,9 @@
 .features-horizontal
   %ul.features-horizontal-list.list-inline
-    - 4.times do
+    - @features_horizontal.each do |feature|
       %li.g-col-3.g-small-3
         %p.meta
-          %time{ datetime: Date.today } YYYY-MM-DD
+          %time{ datetime: feature.date }= feature.date
           |
           %span= link_to('Topic', '#')
-        = render('pages/molecules/blocks/thumb_headline')
+        = render('pages/molecules/blocks/thumb_headline', :article => feature)
