@@ -1,9 +1,15 @@
-.comment-container
-  .comment-meta
-    =# render avatar
-    %h4.comment-name
-      = link_to('Comment author', '#')
-    .comment-text
-      %p This is a comment lala comment.
+.comment-stream
+  = render('pages/molecules/components/single_comment')
   .comment-replies
+    = render('pages/molecules/components/single_comment')
+    = render('pages/molecules/components/single_comment')
+    = render('pages/molecules/components/single_comment')
+    = render('pages/molecules/components/single_comment')
+  = render('pages/molecules/components/single_comment')
+  .comment-replies
+    = render('pages/molecules/components/single_comment')
+  = render('pages/molecules/components/single_comment')
+  .comment-replies
+    = render('pages/molecules/components/single_comment')
+    = render('pages/molecules/components/single_comment')
     = render('pages/molecules/components/single_comment')

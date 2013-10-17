@@ -1,0 +1,11 @@
+.comment-replies {
+  margin-bottom: $padding-large-vertical;
+}
+
+.comment-avatar {
+  margin-right: $padding-base-horizontal;
+}
+
+.comment-replies {
+  margin-left: $comment-avatar-width + $padding-base-horizontal;
+}

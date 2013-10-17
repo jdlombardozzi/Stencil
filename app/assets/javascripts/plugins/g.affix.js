@@ -29,6 +29,8 @@
 		init: function () {
 			this.position = this.$element.offset();
 
+			this.$element.wrap('<div style="height:' + this.$element.outerHeight(true) + 'px;">');
+
 			this.$window.on('resize.' + this._name + '.' + this.settings.rand, $.proxy(this.checkPosition, this));
 			this.$window.on('scroll.' + this._name + '.' + this.settings.rand, $.proxy(this.checkPosition, this));
 		},
