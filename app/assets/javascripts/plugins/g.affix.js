@@ -11,7 +11,7 @@
 		rand: Date.now(),
 		fixedClass: 'affixed',
 		throttled: true,
-		throttleMs: 50
+		throttleMs: 16
 	};
 
 	// The actual plugin constructor
@@ -27,27 +27,26 @@
 
 	Affix.prototype = {
 		init: function () {
-			this.scrollTop = this.$window.scrollTop();
 			this.position = this.$element.offset();
 
 			this.$window.on('resize.' + this._name + '.' + this.settings.rand, $.proxy(this.checkPosition, this));
 			this.$window.on('scroll.' + this._name + '.' + this.settings.rand, $.proxy(this.checkPosition, this));
-
-			console.log('init affix');
 		},
 		checkPosition: function() {
 			clearTimeout(this.timeout);
 			this.timeout = setTimeout($.proxy(function() {
-				console.log('checking position at ' + Date.now());
+				// fail fast if element is not visible
 				if (!this.$element.is(':visible')) {
-					return; // fail fast
+					return;
 				}
 
-				// recalculate offsets in case element was initially hidden
-				this.scrollTop = this.$window.scrollTop();
-				this.position = this.$element.offset();
+				// recalculate position in case element was
+				// initially hidden
+				if (this.position.top === 0) {
+					this.position = this.$element.offset();
+				}
 
-				this.$element.toggleClass(this.settings.fixedClass, this.scrollTop >= this.position.top);
+				this.$element.toggleClass(this.settings.fixedClass, this.$window.scrollTop() >= this.position.top);
 			}, this), this.settings.throttled ? this.settings.throttleMs : 0);
 		},
 		unAffix: function() {
