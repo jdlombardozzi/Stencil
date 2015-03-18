@@ -13,9 +13,9 @@ class PagesController < ApplicationController
   end
 
   def page__taxa_article
-    @article = Gditweb::Feature.new({date: Date.today.strftime('%Y-%m-%d'),
-                                     title: 'Lorem ipsum headline slipsum'
-                                    })
+    # @article = Gditweb::Feature.new({date: Date.today.strftime('%Y-%m-%d'),
+    #                                  title: 'Lorem ipsum headline slipsum'
+    #                                 })
 
     # Use @article to create an array of articles
     @features_horizontal = 4.times.try(:inject, []) { |rows, row|
@@ -26,6 +26,6 @@ class PagesController < ApplicationController
   end
 
   def page__templates_article
-    @article = Gditweb::Feature.find('ste/feature/1')
+    # @article = Gditweb::Feature.find('ste/feature/1')
   end
 end

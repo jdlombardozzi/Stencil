@@ -8,8 +8,9 @@ end
 
 # Project specific gems
 gem 'rails', '4.0.0'
+gem 'mysql2'
 #gem 'jbuilder', '~> 1.2' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'gditweb', git: 'gd:gditweb_plugin', branch: 'release/3.0.0'
+# gem 'gditweb', git: 'gd:gditweb_plugin', branch: 'release/3.0.0'
 
 # Project asset management
 gem 'execjs' # JS runtime
